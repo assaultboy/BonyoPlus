@@ -11,5 +11,11 @@ class CfgFunctions
 		{
 			class print {};
 		};
+		
+		class spectator
+		{
+			class enterSpectator {};
+			class exitSpectator {};
+		};
 	};
 };

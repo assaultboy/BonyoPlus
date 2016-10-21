@@ -5,10 +5,18 @@
   Server configuration scripting for Bonyo
 --------------------------------------------------------------------*/
 
+// ----------------------------------------
+//  Classes and Configs
+// ----------------------------------------
+
+//Include our special functions
+#include "cfgFunctions.hpp"
+#include "cfgNotifications.hpp"
+
 // Display Information
 #include "description_info.hpp"
 
-respawn = "BASE";                   // BASE (3) Respawn on markers "respawn_west_x". Multiple markers possible. If no marker present, player respawns where he started the mission.
+respawn = "BASE";
 respawnButton = 1;          		// Respawn button enabled
 respawnDelay = 10;                  // Delay in seconds before playable unit respawns.
 respawnDialog = 0;                  // 0/1 to disable the scoreboard from showing automatically
@@ -27,11 +35,3 @@ class Header {
   maxPlayers = 80;  // Maximum number of players the mission supports (number of playable units on the map, including Zeus Curators)
   minPlayers = 1;   // Minimum number of players the mission supports (required for a game to start)
 };
-
-// ----------------------------------------
-//  Classes and Configs
-// ----------------------------------------
-
-//Include our special functions
-#include "cfgFunctions.hpp"
-#include "cfgNotifications.hpp"
