@@ -17,6 +17,11 @@ respawnOnStart = 0;					//Run respawn script when player first joins, but don't 
 disabledAI = 1;           			// Disables AI for Playable Units
 enableDebugConsole = 1;       		// Enables Debug Console in Pause menu (1 = Hosts and Admins)
 
+corpseManagerMode = 0;              // Corpses will not be removed automatically
+wreckManagerMode = 0;               // Wrecks will not be removed automatically
+
+saving = 0;                         // Don't let people save
+
 class Header {
   gameType = Coop;  // Game Type
   maxPlayers = 80;  // Maximum number of players the mission supports (number of playable units on the map, including Zeus Curators)
