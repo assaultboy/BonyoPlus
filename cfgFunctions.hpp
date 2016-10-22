@@ -24,5 +24,11 @@ class CfgFunctions
 			class startRound {};
 			class endRound {};
 		};
+		
+		class ai
+		{
+			class spawnInfGroup {};
+			class spawnUnit {};
+		};
 	};
 };

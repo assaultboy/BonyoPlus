@@ -7,3 +7,7 @@ BONYO_currentRound = 1;
 //This is set to true when a round in going on
 BONYO_roundActive = false;
 //----------------------------------------------------------------------------------------------------------
+
+
+if (isServer) then {
+};
