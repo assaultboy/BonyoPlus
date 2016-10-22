@@ -14,6 +14,8 @@
 		[] call BONYO_fnc_enterSpectator
 */
 
+//Only execute on CLients
+if !hasInterface exitWith {true};
 
 //This will force the player into spectator mode
 [true] call ace_spectator_fnc_setSpectator;

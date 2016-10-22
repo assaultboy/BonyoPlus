@@ -45,12 +45,12 @@ _unit forceAddUniform "U_B_CombatUniform_NKPBlack";
 for "_i" from 1 to 5 do {_unit addItemToUniform "ACE_fieldDressing";};
 _unit addItemToUniform "ACE_epinephrine";
 for "_i" from 1 to 3 do {_unit addItemToUniform "ACE_morphine";};
-for "_i" from 1 to 4 do {_unit addItemToUniform "16Rnd_9x21_Mag";};
+_unit addMagazines ["30Rnd_9x21_Mag",4];
 
-_unit addHeadgear "H_Beret_02";
+//_unit addHeadgear "H_Beret_02";
 
 //Add our Weapon
-_unit addWeapon "hgun_P07_F";
+_unit addWeapon "SMG_02_F";
 
 //Add our items
 _unit linkItem "ItemMap";
