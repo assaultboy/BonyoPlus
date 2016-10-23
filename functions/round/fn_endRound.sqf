@@ -20,26 +20,24 @@
 //Only run on the server
 if (!isServer) exitWith {true};
 
-"MAde it into endRound" call BONYO_fnc_print;
-
 //Now round is active
-if (BONYO_roundActive) then {
+if (BONYO_currentMode == "activeround") then {
 	//Deactivate the round
-	BONYO_roundActive = false;
+	BONYO_currentMode = "idle";
 	
 	//Bring everyone out of specator mode
 	[] remoteExec ["BONYO_fnc_exitSpectator", 0];
 	
 	//If the round was successful
 	if (_this) then {
-		BONYO_currentRound = BONYO_currentRound + 1;
+		["WaveComplete", [BONYO_currentRound, BONYO_roundCompleteRemarks call BIS_fnc_selectRandom]] remoteExec ["BIS_fnc_showNotification", 0];
 		
-		"Round Successful" call BONYO_fnc_print;
+		BONYO_currentRound = BONYO_currentRound + 1;
 	
 	//If the round was a failure
 	} else {
 		//Tell the players
-		"The ass band will play a song of farts to celebrate your failure" call BONYO_fnc_print;
+		["WaveFail", [BONYO_currentRound, BONYO_roundFailRemarks call BIS_fnc_selectRandom]] remoteExec ["BIS_fnc_showNotification", 0];
 		
 		//Clear all corpses
 		[getMarkerPos "area_base", 10000] call BONYO_fnc_clearCorpses;
@@ -52,9 +50,9 @@ if (BONYO_roundActive) then {
 	
 	//Sync the servers variables with all the clients
 	[BONYO_currentRound,
-	BONYO_roundActive] remoteExec ["BONYO_fnc_syncVariables", -2];
+	BONYO_currentMode] remoteExec ["BONYO_fnc_syncVariables", -2];
 	
 //A round is already active
 } else {
-	"Warning! Can only end round during an active round" call BONYO_fnc_print;
+	"Warning! Can only end round during mode 'activeround'" call BONYO_fnc_print;
 };

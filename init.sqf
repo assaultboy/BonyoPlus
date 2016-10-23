@@ -7,8 +7,8 @@ Vcom_ActivateAI = false;
 //This is the round that will be started when the button is pressed
 BONYO_currentRound = 1;
 
-//This is set to true when a round in going on
-BONYO_roundActive = false;
+//This is set to the current Mode
+BONYO_currentMode = "idle";
 //----------------------------------------------------------------------------------------------------------
 
 
@@ -17,5 +17,10 @@ if (isServer) then {
 	
 	BONYO_activeEnemyUnitList = [];
 	
+	BONYO_roundCompleteRemarks = [];
+	BONYO_roundFailRemarks = [];
+	
 	_nil = [] execVM "scripts\setup\compileMarkerLists.sqf";
+	
+	_nil = [] execVM "scripts\setup\defineRemarks.sqf";
 };

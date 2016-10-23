@@ -18,23 +18,20 @@
 //Only run on the server
 if (!isServer) exitWith {true};
 
-"IN Round Start" call BONYO_fnc_print;
-
 //Now round is active
-if (!BONYO_roundActive) then {
-	"Round Should Start" call BONYO_fnc_print;
-	//Activate the round
-	BONYO_roundActive = true;
+if (BONYO_currentMode == "idle") then {
+	//Set our Mode
+	BONYO_currentMode = "activeround";
 	
 	//Sync the servers variables with all the clients
 	[BONYO_currentRound,
-	BONYO_roundActive] remoteExec ["BONYO_fnc_syncVariables", 0];
+	BONYO_currentMode] remoteExec ["BONYO_fnc_syncVariables", 0];
 	
-	"Before Call" call BONYO_fnc_print;
 	BONYO_currentRound call BONYO_fnc_spawnWave;
-	"After Call" call BONYO_fnc_print;
+	
+	["WaveStart", [BONYO_currentRound]] remoteExec ["BIS_fnc_showNotification", 0];
 	
 //A round is already active
 } else {
-	"Warning! Can not start Round during a round" call BONYO_fnc_print;
+	"Warning! Can only start a round during mode 'idle'" call BONYO_fnc_print;
 };

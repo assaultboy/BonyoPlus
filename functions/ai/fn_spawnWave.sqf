@@ -16,11 +16,8 @@
 		 10 call BONYO_fnc_spawnWave
 */
 
-"Made it into spawnWave Function" call BONYO_fnc_print;
 //Server only
 if (!isServer) exitWith {true};
-
-"Made it passed server Check" call BONYO_fnc_print;
 
 //Cleanup the last round
 [getMarkerPos "area_base" ,10000] call BONYO_fnc_clearCorpses;
@@ -54,8 +51,6 @@ for [{_i=1}, {_i<=_groupCount}, {_i=_i+1}] do {
 	{
 		BONYO_activeEnemyUnitList pushBack _x;
 	} forEach units _grp;
-	
-	"Spawned Group" call BONYO_fnc_print;
 };
 
 //Start the round tracker

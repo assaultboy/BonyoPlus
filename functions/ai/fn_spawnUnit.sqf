@@ -24,13 +24,13 @@
 
 private ["_unit"];
 
-"Made it into spawnUnit Function" call BONYO_fnc_print;
-
 _unit = ((_this select 3) createUnit [_this select 0, _this select 2, [], 0, "NONE"]);
 [_unit] join (_this select 3);
 
+//Disable VCOM
 _unit setVariable ["NOAI",1,false];
 
+//Set our rank
 _unit setRank (_this select 1);
 
 _unit
