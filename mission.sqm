@@ -8,7 +8,7 @@ class EditorData
 	toggles=13;
 	class ItemIDProvider
 	{
-		nextID=91;
+		nextID=117;
 	};
 	class MarkerIDProvider
 	{
@@ -16,10 +16,10 @@ class EditorData
 	};
 	class Camera
 	{
-		pos[]={7812.8315,16.111361,3547.8103};
-		dir[]={0.13273817,-0.71650231,-0.68484777};
-		up[]={0.13633648,0.69758552,-0.70341182};
-		aside[]={-0.98173362,-2.1886081e-007,-0.1902813};
+		pos[]={7945.1021,71.800522,3540.6965};
+		dir[]={-0.53007442,-0.81272119,0.24235064};
+		up[]={-0.73910201,0.58270544,0.337917};
+		aside[]={0.41585004,7.590279e-008,0.90955848};
 	};
 };
 binarizationWanted=0;
@@ -203,12 +203,1067 @@ class AddonsMetaData
 randomSeed=9387857;
 class ScenarioData
 {
-	author="Assaultboy";
+	author="J.Romano";
+	overviewText="Defend your area from wave after wave of enemies.";
+	onLoadMission="Sustain that looting habit.";
+	briefing=0;
+	debriefing=0;
+	saving=0;
+	respawnDialog=0;
+	joinUnassigned=0;
+	respawn=3;
+	respawnDelay=10;
+	class Header
+	{
+		gameType="Survive";
+	};
+};
+class CustomAttributes
+{
+	class Category0
+	{
+		name="Multiplayer";
+		class Attribute0
+		{
+			property="Enh_dynamicGroups";
+			expression="				if (!is3DEN && _value && isMultiplayer) then				{					if (isServer) then					{						['Initialize'] call BIS_fnc_dynamicGroups;					};					{						['InitializePlayer',[player]] call BIS_fnc_dynamicGroups;					} remoteExec ['BIS_fnc_spawn',[0,-2] select (isMultiplayer && isDedicated),true];				};			";
+			class Value
+			{
+				class data
+				{
+					class type
+					{
+						type[]=
+						{
+							"BOOL"
+						};
+					};
+					value=0;
+				};
+			};
+		};
+		class Attribute1
+		{
+			property="ReviveRequiredItems";
+			expression="false";
+			class Value
+			{
+				class data
+				{
+					class type
+					{
+						type[]=
+						{
+							"SCALAR"
+						};
+					};
+					value=0;
+				};
+			};
+		};
+		class Attribute2
+		{
+			property="ReviveForceRespawnDelay";
+			expression="false";
+			class Value
+			{
+				class data
+				{
+					class type
+					{
+						type[]=
+						{
+							"SCALAR"
+						};
+					};
+					value=3;
+				};
+			};
+		};
+		class Attribute3
+		{
+			property="ReviveMedicSpeedMultiplier";
+			expression="false";
+			class Value
+			{
+				class data
+				{
+					class type
+					{
+						type[]=
+						{
+							"SCALAR"
+						};
+					};
+					value=2;
+				};
+			};
+		};
+		class Attribute4
+		{
+			property="ReviveMode";
+			expression="false";
+			class Value
+			{
+				class data
+				{
+					class type
+					{
+						type[]=
+						{
+							"SCALAR"
+						};
+					};
+					value=0;
+				};
+			};
+		};
+		class Attribute5
+		{
+			property="RespawnButton";
+			expression="true";
+			class Value
+			{
+				class data
+				{
+					class type
+					{
+						type[]=
+						{
+							"SCALAR"
+						};
+					};
+					value=1;
+				};
+			};
+		};
+		class Attribute6
+		{
+			property="ReviveBleedOutDelay";
+			expression="false";
+			class Value
+			{
+				class data
+				{
+					class type
+					{
+						type[]=
+						{
+							"SCALAR"
+						};
+					};
+					value=120;
+				};
+			};
+		};
+		class Attribute7
+		{
+			property="ReviveDelay";
+			expression="false";
+			class Value
+			{
+				class data
+				{
+					class type
+					{
+						type[]=
+						{
+							"SCALAR"
+						};
+					};
+					value=6;
+				};
+			};
+		};
+		class Attribute8
+		{
+			property="SharedObjectives";
+			expression="if (isMultiplayer) then {[_value] spawn bis_fnc_sharedObjectives;};";
+			class Value
+			{
+				class data
+				{
+					class type
+					{
+						type[]=
+						{
+							"SCALAR"
+						};
+					};
+					value=0;
+				};
+			};
+		};
+		class Attribute9
+		{
+			property="Enh_respawnTickets_independent";
+			expression="if (!is3DEN && isMultiplayer && (_value >= 0)) then {[independent,_value] call BIS_fnc_respawnTickets};";
+			class Value
+			{
+				class data
+				{
+					class type
+					{
+						type[]=
+						{
+							"SCALAR"
+						};
+					};
+					value=-1;
+				};
+			};
+		};
+		class Attribute10
+		{
+			property="Enh_respawnTickets_west";
+			expression="if (!is3DEN && isMultiplayer && (_value >= 0)) then {[west,_value] call BIS_fnc_respawnTickets};";
+			class Value
+			{
+				class data
+				{
+					class type
+					{
+						type[]=
+						{
+							"SCALAR"
+						};
+					};
+					value=-1;
+				};
+			};
+		};
+		class Attribute11
+		{
+			property="Enh_saveGearPlayers";
+			expression="      if (!is3DEN && _value && isMultiplayer) then      {         {            if (isNil {player getVariable 'Enh_savedLoadout'}) then            {               player setVariable ['Enh_savedLoadout',getUnitloadout player];               player addEventHandler ['respawn',{player setUnitLoadout (player getVariable 'Enh_savedLoadout')}];            };         } remoteExec ['call',[0,-2] select (isMultiplayer && isDedicated),true];      };   ";
+			class Value
+			{
+				class data
+				{
+					class type
+					{
+						type[]=
+						{
+							"BOOL"
+						};
+					};
+					value=0;
+				};
+			};
+		};
+		class Attribute12
+		{
+			property="ReviveRequiredTrait";
+			expression="false";
+			class Value
+			{
+				class data
+				{
+					class type
+					{
+						type[]=
+						{
+							"SCALAR"
+						};
+					};
+					value=0;
+				};
+			};
+		};
+		class Attribute13
+		{
+			property="ReviveRequiredItemsFakConsumed";
+			expression="false";
+			class Value
+			{
+				class data
+				{
+					class type
+					{
+						type[]=
+						{
+							"BOOL"
+						};
+					};
+					value=1;
+				};
+			};
+		};
+		class Attribute14
+		{
+			property="RespawnTemplates";
+			expression="true";
+			class Value
+			{
+				class data
+				{
+					class type
+					{
+						type[]=
+						{
+							"ARRAY"
+						};
+					};
+				};
+			};
+		};
+		class Attribute15
+		{
+			property="ReviveUnconsciousStateMode";
+			expression="false";
+			class Value
+			{
+				class data
+				{
+					class type
+					{
+						type[]=
+						{
+							"SCALAR"
+						};
+					};
+					value=0;
+				};
+			};
+		};
+		class Attribute16
+		{
+			property="Enh_respawnTickets_east";
+			expression="if (!is3DEN && isMultiplayer && (_value >= 0)) then {[east,_value] call BIS_fnc_respawnTickets};";
+			class Value
+			{
+				class data
+				{
+					class type
+					{
+						type[]=
+						{
+							"SCALAR"
+						};
+					};
+					value=-1;
+				};
+			};
+		};
+		nAttributes=17;
+	};
+	class Category1
+	{
+		name="Scenario";
+		class Attribute0
+		{
+			property="Enh_randomMusic";
+			expression="				if (!is3DEN && !(_value isEqualTo [])) then				{					(selectRandom _value) remoteExec ['playMusic',[0,-2] select (isMultiplayer && isDedicated)];				};			";
+			class Value
+			{
+				class data
+				{
+					class type
+					{
+						type[]=
+						{
+							"ARRAY"
+						};
+					};
+				};
+			};
+		};
+		class Attribute1
+		{
+			property="EnableDebugConsole";
+			expression="true";
+			class Value
+			{
+				class data
+				{
+					class type
+					{
+						type[]=
+						{
+							"SCALAR"
+						};
+					};
+					value=1;
+				};
+			};
+		};
+		class Attribute2
+		{
+			property="'Enh_line2'";
+			expression="missionNamespace setVariable ['Enh_introLine2',_value]";
+			class Value
+			{
+				class data
+				{
+					class type
+					{
+						type[]=
+						{
+							"STRING"
+						};
+					};
+					value="by J.Romano";
+				};
+			};
+		};
+		class Attribute3
+		{
+			property="Enh_centerPosition";
+			expression="missionNamespace setVariable ['Enh_centerPosition',_value]";
+			class Value
+			{
+				class data
+				{
+					class type
+					{
+						type[]=
+						{
+							"ARRAY"
+						};
+					};
+					class value
+					{
+						items=3;
+						class Item0
+						{
+							class data
+							{
+								class type
+								{
+									type[]=
+									{
+										"SCALAR"
+									};
+								};
+								value=0;
+							};
+						};
+						class Item1
+						{
+							class data
+							{
+								class type
+								{
+									type[]=
+									{
+										"SCALAR"
+									};
+								};
+								value=0;
+							};
+						};
+						class Item2
+						{
+							class data
+							{
+								class type
+								{
+									type[]=
+									{
+										"SCALAR"
+									};
+								};
+								value=0;
+							};
+						};
+					};
+				};
+			};
+		};
+		class Attribute4
+		{
+			property="Enh_directionCamera";
+			expression="missionNamespace setVariable ['Enh_directionCamera',_value]";
+			class Value
+			{
+				class data
+				{
+					class type
+					{
+						type[]=
+						{
+							"SCALAR"
+						};
+					};
+					value=0;
+				};
+			};
+		};
+		class Attribute5
+		{
+			property="Enh_advancedEnding_endingNameLose";
+			expression="				if (!(_value == '') && !is3DEN) then				{					_value spawn					{						_music = missionNamespace getVariable 'Enh_advancedEnding_playMusic';						_tasks = missionNamespace getVariable 'Enh_advancedEnding_cancelTasks';						_win = compileFinal (missionNamespace getVariable 'Enh_advancedEnding_ConditionWin');						_lose = compileFinal (missionNamespace getVariable 'Enh_advancedEnding_ConditionLose');												waitUntil {sleep 10; (call _lose)};						[_this,false,nil,_music,_tasks] remoteExec ['BIS_fnc_endMission',0];					};				};			";
+			class Value
+			{
+				class data
+				{
+					class type
+					{
+						type[]=
+						{
+							"STRING"
+						};
+					};
+					value="";
+				};
+			};
+		};
+		class Attribute6
+		{
+			property="Enh_establisingShot_activate";
+			expression="				if (!is3DEN && _value) then				{					[] spawn					{						waitUntil {time > 0.005};						[							missionNamespace getVariable 'Enh_centerPosition',							missionNamespace getVariable 'Enh_displayText',							missionNamespace getVariable 'Enh_altitude',							missionNamespace getVariable 'Enh_radius',							missionNamespace getVariable 'Enh_viewingAngle',							missionNamespace getVariable 'Enh_directionCamera'						]						remoteExec ['BIS_fnc_establishingShot',[0,-2] select (isMultiplayer && isDedicated),true];					}				};			";
+			class Value
+			{
+				class data
+				{
+					class type
+					{
+						type[]=
+						{
+							"BOOL"
+						};
+					};
+					value=0;
+				};
+			};
+		};
+		class Attribute7
+		{
+			property="Enh_advancedEnding_conditionWin";
+			expression="missionNamespace setVariable ['Enh_advancedEnding_ConditionWin',_value]";
+			class Value
+			{
+				class data
+				{
+					class type
+					{
+						type[]=
+						{
+							"STRING"
+						};
+					};
+					value="false";
+				};
+			};
+		};
+		class Attribute8
+		{
+			property="Enh_soundVolume";
+			expression="				if (!is3DEN) then				{					[0,_value] remoteExec ['fadeSound',[0,-2] select (isMultiplayer && isDedicated),true];				};			";
+			class Value
+			{
+				class data
+				{
+					class type
+					{
+						type[]=
+						{
+							"SCALAR"
+						};
+					};
+					value=1;
+				};
+			};
+		};
+		class Attribute9
+		{
+			property="Enh_advancedEnding_conditionLose";
+			expression="missionNamespace setVariable ['Enh_advancedEnding_ConditionLose',_value]";
+			class Value
+			{
+				class data
+				{
+					class type
+					{
+						type[]=
+						{
+							"STRING"
+						};
+					};
+					value="false";
+				};
+			};
+		};
+		class Attribute10
+		{
+			property="Enh_ambientFlyby_iterations";
+			expression="missionNamespace setVariable ['Enh_ambientFlyby_iterations',_value]";
+			class Value
+			{
+				class data
+				{
+					class type
+					{
+						type[]=
+						{
+							"SCALAR"
+						};
+					};
+					value=1;
+				};
+			};
+		};
+		class Attribute11
+		{
+			property="Enh_advancedEnding_playMusic";
+			expression="missionNamespace setVariable ['Enh_advancedEnding_playMusic',_value]";
+			class Value
+			{
+				class data
+				{
+					class type
+					{
+						type[]=
+						{
+							"BOOL"
+						};
+					};
+					value=1;
+				};
+			};
+		};
+		class Attribute12
+		{
+			property="Enh_ambientFlyby_startPos";
+			expression="missionNamespace setVariable ['Enh_ambientFlyby_startPos',_value]";
+			class Value
+			{
+				class data
+				{
+					class type
+					{
+						type[]=
+						{
+							"ARRAY"
+						};
+					};
+					class value
+					{
+						items=3;
+						class Item0
+						{
+							class data
+							{
+								class type
+								{
+									type[]=
+									{
+										"SCALAR"
+									};
+								};
+								value=0;
+							};
+						};
+						class Item1
+						{
+							class data
+							{
+								class type
+								{
+									type[]=
+									{
+										"SCALAR"
+									};
+								};
+								value=0;
+							};
+						};
+						class Item2
+						{
+							class data
+							{
+								class type
+								{
+									type[]=
+									{
+										"SCALAR"
+									};
+								};
+								value=0;
+							};
+						};
+					};
+				};
+			};
+		};
+		class Attribute13
+		{
+			property="Enh_ambientFlyby_side";
+			expression="missionNamespace setVariable ['Enh_ambientFlyby_side',_value]";
+			class Value
+			{
+				class data
+				{
+					class type
+					{
+						type[]=
+						{
+							"SCALAR"
+						};
+					};
+					value=1;
+				};
+			};
+		};
+		class Attribute14
+		{
+			property="Enh_ambientFlyby_Delay";
+			expression="missionNamespace setVariable ['Enh_ambientFlyby_delay',_value]";
+			class Value
+			{
+				class data
+				{
+					class type
+					{
+						type[]=
+						{
+							"SCALAR"
+						};
+					};
+					value=360;
+				};
+			};
+		};
+		class Attribute15
+		{
+			property="Enh_introDelay";
+			expression="				if ((_value > 0) && !is3DEN) then				{					_value spawn					{						waitUntil {time > _this};						[							parseText format							[								""<t align='right' size='1.6'><t font='PuristaBold' size='1.8'>%1<br/></t>%2<br/>%3</t>"",								(missionNamespace getVariable 'Enh_introLine1'),								(missionNamespace getVariable 'Enh_introLine2'),								(missionNamespace getVariable 'Enh_introLine3')							],							true						] remoteExec ['BIS_fnc_textTiles',[0,-2] select (isMultiplayer && isDedicated),true];					}				};			";
+			class Value
+			{
+				class data
+				{
+					class type
+					{
+						type[]=
+						{
+							"SCALAR"
+						};
+					};
+					value=-1;
+				};
+			};
+		};
+		class Attribute16
+		{
+			property="Enh_ambientFlyby_altitude";
+			expression="missionNamespace setVariable ['Enh_ambientFlyby_altitude',_value]";
+			class Value
+			{
+				class data
+				{
+					class type
+					{
+						type[]=
+						{
+							"SCALAR"
+						};
+					};
+					value=100;
+				};
+			};
+		};
+		class Attribute17
+		{
+			property="Enh_displayText";
+			expression="missionNamespace setVariable ['Enh_displayText',_value]";
+			class Value
+			{
+				class data
+				{
+					class type
+					{
+						type[]=
+						{
+							"STRING"
+						};
+					};
+					value="Chernarus_Summer";
+				};
+			};
+		};
+		class Attribute18
+		{
+			property="'Enh_line3'";
+			expression="missionNamespace setVariable ['Enh_introLine3',_value]";
+			class Value
+			{
+				class data
+				{
+					class type
+					{
+						type[]=
+						{
+							"STRING"
+						};
+					};
+					value="Happy Looting";
+				};
+			};
+		};
+		class Attribute19
+		{
+			property="Enh_ambientFlyby_type";
+			expression="				if (!(_value isEqualTo []) && !is3DEN) then				{					_value spawn					{						waitUntil {time > 0.2};												_startPos = missionNamespace getVariable 'Enh_ambientFlyby_startPos',						_endPos = missionNamespace getVariable 'Enh_ambientFlyby_endPos',						_alt = missionNamespace getVariable 'Enh_ambientFlyby_altitude',						_speed = missionNamespace getVariable 'Enh_ambientFlyby_speed',						_side = ([EAST,WEST,INDEPENDENT,CIVILIAN] select (missionNamespace getVariable 'Enh_ambientFlyby_side'));						_delay = (missionNamespace getVariable 'Enh_ambientFlyby_delay');												for '_i' from 0 to (missionNamespace getVariable 'Enh_ambientFlyby_iterations') do						{							sleep _delay;							[_startPos,_endPos,_alt,_speed,selectRandom _this,_side] call BIS_fnc_ambientFlyby;						};					};				};			";
+			class Value
+			{
+				class data
+				{
+					class type
+					{
+						type[]=
+						{
+							"ARRAY"
+						};
+					};
+				};
+			};
+		};
+		class Attribute20
+		{
+			property="Enh_ambientFlyby_speed";
+			expression="missionNamespace setVariable ['Enh_ambientFlyby_speed',_value]";
+			class Value
+			{
+				class data
+				{
+					class type
+					{
+						type[]=
+						{
+							"STRING"
+						};
+					};
+					value="normal";
+				};
+			};
+		};
+		class Attribute21
+		{
+			property="Enh_musicVolume";
+			expression="				if (!is3DEN) then				{					[0,_value] remoteExec ['fadeMusic',[0,-2] select (isMultiplayer && isDedicated),true];				};			";
+			class Value
+			{
+				class data
+				{
+					class type
+					{
+						type[]=
+						{
+							"SCALAR"
+						};
+					};
+					value=1;
+				};
+			};
+		};
+		class Attribute22
+		{
+			property="Enh_advancedEnding_endingNameWin";
+			expression="				if (!(_value == '') && !is3DEN) then				{					_value spawn					{						_music = missionNamespace getVariable 'Enh_advancedEnding_playMusic';						_tasks = missionNamespace getVariable 'Enh_advancedEnding_cancelTasks';						_win = compileFinal (missionNamespace getVariable 'Enh_advancedEnding_ConditionWin');												waitUntil {sleep 10; (call _win)};						[_this,true,nil,_music,_tasks] remoteExec ['BIS_fnc_endMission',0];					};				};			";
+			class Value
+			{
+				class data
+				{
+					class type
+					{
+						type[]=
+						{
+							"STRING"
+						};
+					};
+					value="";
+				};
+			};
+		};
+		class Attribute23
+		{
+			property="Enh_radius";
+			expression="missionNamespace setVariable ['Enh_radius',_value]";
+			class Value
+			{
+				class data
+				{
+					class type
+					{
+						type[]=
+						{
+							"SCALAR"
+						};
+					};
+					value=100;
+				};
+			};
+		};
+		class Attribute24
+		{
+			property="Enh_firstLine";
+			expression="missionNamespace setVariable ['Enh_introLine1',_value]";
+			class Value
+			{
+				class data
+				{
+					class type
+					{
+						type[]=
+						{
+							"STRING"
+						};
+					};
+					value="Bonyo+ Chernarus";
+				};
+			};
+		};
+		class Attribute25
+		{
+			property="Enh_ambientFlyby_endPos";
+			expression="missionNamespace setVariable ['Enh_ambientFlyby_endPos',_value]";
+			class Value
+			{
+				class data
+				{
+					class type
+					{
+						type[]=
+						{
+							"ARRAY"
+						};
+					};
+					class value
+					{
+						items=3;
+						class Item0
+						{
+							class data
+							{
+								class type
+								{
+									type[]=
+									{
+										"SCALAR"
+									};
+								};
+								value=1000;
+							};
+						};
+						class Item1
+						{
+							class data
+							{
+								class type
+								{
+									type[]=
+									{
+										"SCALAR"
+									};
+								};
+								value=1000;
+							};
+						};
+						class Item2
+						{
+							class data
+							{
+								class type
+								{
+									type[]=
+									{
+										"SCALAR"
+									};
+								};
+								value=0;
+							};
+						};
+					};
+				};
+			};
+		};
+		class Attribute26
+		{
+			property="Enh_advancedEnding_cancelTasks";
+			expression="missionNamespace setVariable ['Enh_advancedEnding_cancelTasks',_value]";
+			class Value
+			{
+				class data
+				{
+					class type
+					{
+						type[]=
+						{
+							"BOOL"
+						};
+					};
+					value=1;
+				};
+			};
+		};
+		class Attribute27
+		{
+			property="Enh_radioVolume";
+			expression="				if (!is3DEN) then				{					[0,_value] remoteExec ['fadeRadio',[0,-2] select (isMultiplayer && isDedicated),true];				};			";
+			class Value
+			{
+				class data
+				{
+					class type
+					{
+						type[]=
+						{
+							"SCALAR"
+						};
+					};
+					value=1;
+				};
+			};
+		};
+		class Attribute28
+		{
+			property="Enh_viewingAngle";
+			expression="missionNamespace setVariable ['Enh_viewingAngle',_value]";
+			class Value
+			{
+				class data
+				{
+					class type
+					{
+						type[]=
+						{
+							"SCALAR"
+						};
+					};
+					value=45;
+				};
+			};
+		};
+		class Attribute29
+		{
+			property="'Enh_altitude'";
+			expression="missionNamespace setVariable ['Enh_altitude',_value]";
+			class Value
+			{
+				class data
+				{
+					class type
+					{
+						type[]=
+						{
+							"SCALAR"
+						};
+					};
+					value=300;
+				};
+			};
+		};
+		nAttributes=30;
+	};
 };
 class Mission
 {
 	class Intel
 	{
+		briefingName="Bonyo+ Chernarus";
+		overviewText="Fend of waves of enemies in order to sustain you looting habits.";
+		resistanceWest=0;
+		resistanceEast=1;
 		timeOfChanges=1800.0002;
 		startWeather=0.25;
 		startWind=0.1;

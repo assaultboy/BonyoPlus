@@ -19,7 +19,10 @@
 		[1,true] remoteExec ["BONYO_fnc_syncVariables", -2];
 */
 
+"Made it to syncVariables" call BONYO_fnc_print;
 if (!hasInterface) exitWith {true};
 
 BONYO_currentRound = (_this select 0);
 BONYO_roundActive = (_this select 1);
+
+"Variables Synced" call BONYO_fnc_print;

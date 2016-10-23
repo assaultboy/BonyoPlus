@@ -20,6 +20,8 @@
 //Only run on the server
 if (!isServer) exitWith {true};
 
+"MAde it into endRound" call BONYO_fnc_print;
+
 //Now round is active
 if (BONYO_roundActive) then {
 	//Deactivate the round
@@ -36,7 +38,16 @@ if (BONYO_roundActive) then {
 	
 	//If the round was a failure
 	} else {
+		//Tell the players
 		"The ass band will play a song of farts to celebrate your failure" call BONYO_fnc_print;
+		
+		//Clear all corpses
+		[getMarkerPos "area_base", 10000] call BONYO_fnc_clearCorpses;
+		
+		//Clear all enemies
+		{
+			deleteVehicle _x;
+		} forEach BONYO_activeEnemyUnitList;
 	};
 	
 	//Sync the servers variables with all the clients

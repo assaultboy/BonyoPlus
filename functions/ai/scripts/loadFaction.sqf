@@ -12,7 +12,10 @@ private ["_rifleman",
 	"_heavyar",
 
 	"_officer",
-	"_pilot"];
+	"_pilot",
+	
+	"_sniper",
+	"_spotter"];
 
 //Choose a random faction to load
 switch ([1] call BIS_fnc_selectRandom) do {

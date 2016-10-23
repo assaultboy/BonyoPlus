@@ -17,9 +17,7 @@
 		 _pos call BONYO_fnc_spawnInfGroup
 */
 
-if (!isServer) then {
-	["This function must be executed on the server"] call BIS_fnc_error;
-};
+if (!isServer) exitWith {true};
 
 private ["_groupProto","_grp","_spawnPoint"];
 
@@ -36,6 +34,9 @@ _grp = createGroup EAST;
 //Spawn each member of the group and set them up for bonyo
 {
 	[_x select 0, _x select 1 ,_spawnPoint, _grp] call BONYO_fnc_spawnUnit;
+	//[_spawnPoint, east, ["B_Soldier_F", "B_Soldier_F", "B_Soldier_F"]] call BIS_fnc_spawnGroup;
+	
+	"Unit Spawned" call BONYO_fnc_print;
 } forEach _groupProto;
 
 

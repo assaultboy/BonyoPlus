@@ -11,6 +11,7 @@ class CfgFunctions
 		{
 			class print {};
 			class syncVariables {};
+			class clearCorpses {};
 		};
 		
 		class spectator
@@ -29,6 +30,7 @@ class CfgFunctions
 		{
 			class spawnInfGroup {};
 			class spawnUnit {};
+			class spawnWave {};
 		};
 	};
 };

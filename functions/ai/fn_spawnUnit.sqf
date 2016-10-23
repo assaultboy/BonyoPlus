@@ -24,8 +24,12 @@
 
 private ["_unit"];
 
+"Made it into spawnUnit Function" call BONYO_fnc_print;
+
 _unit = ((_this select 3) createUnit [_this select 0, _this select 2, [], 0, "NONE"]);
 [_unit] join (_this select 3);
+
+_unit setVariable ["NOAI",1,false];
 
 _unit setRank (_this select 1);
 

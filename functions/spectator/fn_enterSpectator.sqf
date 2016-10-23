@@ -21,5 +21,8 @@ if !hasInterface exitWith {true};
 [true] call ace_spectator_fnc_setSpectator;
 [player, true] call ace_spectator_fnc_stageSpectator;
 
+//Set our spectating variable
+player setVariable ["BONYO_isSpectator", true, true];
+
 //We will also place the camera at the play area
 [0, objNull, -2, (markerPos "area_base") vectorAdd [0,0,50]] call ace_spectator_fnc_setCameraAttributes;
