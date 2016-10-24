@@ -32,5 +32,17 @@ class CfgFunctions
 			class spawnUnit {};
 			class spawnWave {};
 		};
+		
+		class money
+		{
+			class addSellPileAction {};
+			class sellPile {};
+			class giveMoney {};
+		};
+		
+		class setup
+		{
+			class setupSellArea {};
+		};
 	};
 };

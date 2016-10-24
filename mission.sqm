@@ -16,10 +16,10 @@ class EditorData
 	};
 	class Camera
 	{
-		pos[]={7760.103,16.857637,3529.0171};
-		dir[]={0.64890575,-0.6748113,0.3515195};
-		up[]={0.59335166,0.73798615,0.32142523};
-		aside[]={0.47631806,1.5832484e-008,-0.87928319};
+		pos[]={7813.3066,8.2075195,3540.1638};
+		dir[]={0.75127327,-0.58724189,0.30128509};
+		up[]={0.54506403,0.80940378,0.21858804};
+		aside[]={0.37222582,3.2584649e-007,-0.92816705};
 	};
 };
 binarizationWanted=0;
@@ -15811,6 +15811,7 @@ class Mission
 			flags=1;
 			class Attributes
 			{
+				init="this call BONYO_fnc_setupSellArea";
 			};
 			id=53;
 			type="VR_Area_01_circle_4_yellow_F";
@@ -15991,7 +15992,7 @@ class Mission
 			position[]={7809.8809,2.1675527e+021,3506.4753};
 			name="respawn";
 			type="Empty";
-			angle=183.02271;
+			angle=183.02267;
 			id=58;
 			atlOffset=2.1675527e+021;
 		};
