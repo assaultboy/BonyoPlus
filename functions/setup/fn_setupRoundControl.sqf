@@ -34,4 +34,26 @@ _this addAction ["Start Wave", {
 	} else {
 		hint "All players must be in the play area to start a round!";
 	};
-}];
+}, nil, 6, false, true, "", "BONYO_currentMode == 'idle'"];
+
+_this addAction ["Spawn Trackers (pls no spam)", {
+	hint "Trackers Spawned";
+	
+	{
+		private ["_flare","_smoke"];
+		
+		_flare = "F_40mm_Red" createVehicle [0,0,500];
+		_smoke = "SmokeShellRed" createVehicle [0,0,500];
+		
+		_flare attachTo [_x, [0,0,50]];
+		_smoke attachTo [_x, [0,0,50]];
+		
+		[_flare,_smoke] spawn {
+			sleep 20;
+			
+			{
+				deleteVehicle _x;
+			} forEach _this;
+		};
+	} forEach BONYO_activeEnemyUnitList;
+}, nil, 6, false, true, "", "BONYO_currentMode == 'activeround'"];
