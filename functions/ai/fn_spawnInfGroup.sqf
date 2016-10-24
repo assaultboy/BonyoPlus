@@ -22,15 +22,10 @@ if (!isServer) exitWith {true};
 
 private ["_groupProto","_grp","_spawnPoint"];
 
-_groupProto = [];
 _spawnPoint = _this;
 _grp = createGroup EAST;
 
-//Choose a random faction to load
-#include "scripts\loadFaction.sqf"
-
-//Choose a random group type to load
-#include "scripts\loadGroup.sqf"
+_groupProto = call (BONYO_enemyInfFactionList call BIS_fnc_selectRandom);
 
 //Spawn each member of the group and set them up for bonyo
 {

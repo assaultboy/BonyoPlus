@@ -20,5 +20,8 @@ if (isServer) then {
 	
 	BONYO_roundCompleteRemarks = [];
 	BONYO_roundFailRemarks = [];
-	[] call BONYO_fnc_compileRemarks
+	[] call BONYO_fnc_compileRemarks;
+	
+	BONYO_enemyInfFactionList = [];
+	[] call BONYO_fnc_compileFactions;
 };

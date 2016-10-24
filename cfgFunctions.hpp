@@ -46,6 +46,7 @@ class CfgFunctions
 			class setupRoundControl {};
 			class compileMarkerLists {};
 			class compileRemarks {};
+			class compileFactions {};
 		};
 	};
 };

@@ -17,6 +17,12 @@ _groupList pushBack [
 	[_medic, "CORPORAL"]
 ];
 
+//Sniper Team
+_groupList pushBack [
+	[_sniper, "SERGEANT"],
+	[_spotter, "CORPORAL"]
+];
+
 //Playercount 5+
 if ((count allPlayers) >= 5) then {
 	//Rifle Squad
