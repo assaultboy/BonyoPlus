@@ -43,6 +43,9 @@ class CfgFunctions
 		class setup
 		{
 			class setupSellArea {};
+			class setupRoundControl {};
+			class compileMarkerLists {};
+			class compileRemarks {};
 		};
 	};
 };

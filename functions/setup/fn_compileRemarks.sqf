@@ -1,3 +1,22 @@
+/*
+	BONYO_fnc_compileRemarks
+	
+	DESCRIPTION:
+		This function will compile all the remarks into the correct lists automatically
+		This function must be executed on the server
+		
+	PARAMETERS:
+		Nothing
+			
+	RETURNS
+		Nothing
+		
+	EXAMPLE
+		[] call BONYO_fnc_compileRemarks;
+*/
+
+if (!isServer) exitWith {true};
+
 BONYO_roundCompleteRemarks = ["Go loot like it's a riot",
 "Free stuff",
 "Raw Capitalism",

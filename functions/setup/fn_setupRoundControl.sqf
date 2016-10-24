@@ -1,9 +1,22 @@
-private ["_obj"];
-
-_obj = _this;
+/*
+	BONYO_fnc_setupRoundControl
+	
+	DESCRIPTION:
+		This function will add various control actions to the given object
+		
+	PARAMETERS:
+		OBJECT:
+			The round control object
+			
+	RETURNS
+		nothing
+		
+	EXAMPLE
+		_obj call BONYO_fnc_setupRoundControl
+*/
 
 //Add our Wave start option
-_obj addAction ["Start Wave", {
+_this addAction ["Start Wave", {
 	//Check if every player is within the marker
 	private ["_allIn"];
 	_allIn = true;

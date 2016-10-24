@@ -13,14 +13,12 @@ BONYO_currentMode = "idle";
 
 
 if (isServer) then {
-	BONYO_enemyInfSpawnList = [];
-	
 	BONYO_activeEnemyUnitList = [];
+	
+	BONYO_enemyInfSpawnList = [];
+	[] call BONYO_fnc_compileMarkerLists;
 	
 	BONYO_roundCompleteRemarks = [];
 	BONYO_roundFailRemarks = [];
-	
-	_nil = [] execVM "scripts\setup\compileMarkerLists.sqf";
-	
-	_nil = [] execVM "scripts\setup\defineRemarks.sqf";
+	[] call BONYO_fnc_compileRemarks
 };
