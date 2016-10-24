@@ -25,7 +25,7 @@ private ["_groupProto","_grp","_spawnPoint"];
 _spawnPoint = _this;
 _grp = createGroup EAST;
 
-_groupProto = call (BONYO_enemyInfFactionList call BIS_fnc_selectRandom);
+_groupProto = [] call (BONYO_enemyInfFactionList call BIS_fnc_selectRandom);
 
 //Spawn each member of the group and set them up for bonyo
 {

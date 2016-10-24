@@ -12,9 +12,9 @@ _groupList pushBack [
 
 //Platoon HQ
 _groupList pushBack [
-	["B_Soldier_SL_F", "LIEUTENANT"],
-	["B_Soldier_TL_F", "SERGEANT"],
-	["B_medic_F", "CORPORAL"]
+	["B_officer_F", "LIEUTENANT"],
+	["B_Soldier_SL_F", "SERGEANT"],
+	["B_medic_F", "PRIVATE"]
 ];
 
 //Sniper Team
@@ -38,4 +38,4 @@ if ((count allPlayers) >= 5) then {
 	];
 };
 
-(_groupList call BIS_fnc_selectRandom);
+(_groupList call BIS_fnc_selectRandom)

@@ -1,19 +1,41 @@
-_rifleman = "O_Soldier_F";
-_riflemanAT = "O_Soldier_LAT_F";
+private ["_groupList"];
 
-_teamleader = "O_Soldier_TL_F";
-_squadleader = "O_Soldier_SL_F";
+_groupList = [];
 
-_ar = "O_Soldier_AR_F";
-_aar = "O_Soldier_AAR_F";
+//Fireteam
+_groupList pushBack [
+	["O_Soldier_TL_F", "CORPORAL"],
+	["O_Soldier_AR_F", "PRIVATE"],
+	["O_Soldier_LAT_F", "PRIVATE"],
+	["O_Soldier_F", "PRIVATE"]
+];
 
-_medic = "O_medic_F";
-_marksman = "O_soldier_M_F";
-_heavyar = "O_HeavyGunner_F";
+//Platoon HQ
+_groupList pushBack [
+	["O_officer_F", "LIEUTENANT"],
+	["O_Soldier_SL_F", "SERGEANT"],
+	["O_medic_F", "PRIVATE"]
+];
 
-_officer = "O_officer_F";
+//Sniper Team
+_groupList pushBack [
+	["O_sniper_F", "SERGEANT"],
+	["O_spotter_F", "CORPORAL"]
+];
 
-_pilot = "O_helipilot_F";
+//Playercount 5+
+if ((count allPlayers) >= 5) then {
+	//Rifle Squad
+	_groupList pushBack [
+		["O_Soldier_SL_F", "SERGEANT"],
+		["O_Soldier_TL_F", "CORPORAL"],
+		["O_Soldier_F", "PRIVATE"],
+		["O_Soldier_F", "PRIVATE"],
+		["O_medic_F", "PRIVATE"],
+		["O_Soldier_AR_F", "PRIVATE"],
+		["O_soldier_M_F", "PRIVATE"],
+		["O_Soldier_LAT_F", "PRIVATE"]
+	];
+};
 
-_sniper = "O_sniper_F";
-_spotter = "O_spotter_F";
+(_groupList call BIS_fnc_selectRandom)

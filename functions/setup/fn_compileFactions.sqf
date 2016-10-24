@@ -20,5 +20,5 @@ if (!isServer) exitWith {true};
 
 //Infantry Faction List
 {
-	BONYO_enemyInfFactionList pushBack compile preprocessFile (format ["functions\ai\factions\%1.sqf", _x]);
-} forEach ["NATO"];
+	BONYO_enemyInfFactionList pushBack (compile (preprocessFileLineNumbers (format ["functions\ai\factions\%1.sqf", _x])));
+} forEach ["NATO","CSAT"];
