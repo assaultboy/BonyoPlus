@@ -23,13 +23,15 @@ if (BONYO_currentMode == "idle") then {
 	//Set our Mode
 	BONYO_currentMode = "activeround";
 	
+	//Spawn our Wave
+	BONYO_currentRound call BONYO_fnc_spawnWave;
+	
+	//Send our notification
+	["WaveStart", [BONYO_currentRound]] remoteExec ["BIS_fnc_showNotification", 0];
+	
 	//Sync the servers variables with all the clients
 	[BONYO_currentRound,
 	BONYO_currentMode] remoteExec ["BONYO_fnc_syncVariables", 0];
-	
-	BONYO_currentRound call BONYO_fnc_spawnWave;
-	
-	["WaveStart", [BONYO_currentRound]] remoteExec ["BIS_fnc_showNotification", 0];
 	
 //A round is already active
 } else {

@@ -30,12 +30,19 @@ _this addAction ["Start Wave", {
 	
 	//If every player is in the marker
 	if (_allIn) then {
-		[] remoteExec ["BONYO_fnc_startRound", 2];
+		//Set our mode so that we cant spam the action
+		//We wrap it in the isServer check for when we are in the editor
+		if (!isServer) then {
+			BONYO_currentMode = "transition";
+		};
+		
+		[] remoteExecCall ["BONYO_fnc_startRound", 2];
 	} else {
 		hint "All players must be in the play area to start a round!";
 	};
 }, nil, 6, false, true, "", "BONYO_currentMode == 'idle'"];
 
+//Add our tracker action
 _this addAction ["Spawn Trackers (pls no spam)", {
 	hint "Trackers Spawned";
 	

@@ -22,7 +22,7 @@ if (!isServer) exitWith {true};
 
 //Now round is active
 if (BONYO_currentMode == "activeround") then {
-	//Deactivate the round
+	//Set our Mode
 	BONYO_currentMode = "idle";
 	
 	//Bring everyone out of specator mode
