@@ -5,6 +5,9 @@ class CfgFunctions
 		class gear
 		{
 			class setPlayerSpawnGear {};
+			class getCargo {};
+			class setCargo {};
+			class resetLocker {};
 		};
 		
 		class misc
@@ -45,6 +48,8 @@ class CfgFunctions
 		{
 			class setupSellArea {};
 			class setupRoundControl {};
+			class setupLocker {};
+			
 			class compileMarkerLists {};
 			class compileRemarks {};
 			class compileFactions {};

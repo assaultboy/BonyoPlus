@@ -8,7 +8,7 @@ class EditorData
 	toggles=13;
 	class ItemIDProvider
 	{
-		nextID=186;
+		nextID=187;
 	};
 	class MarkerIDProvider
 	{
@@ -16,10 +16,10 @@ class EditorData
 	};
 	class Camera
 	{
-		pos[]={7731.9087,187.07358,3416.0068};
-		dir[]={-0.20126358,-0.65813589,-0.72553569};
-		up[]={-0.17592908,0.75288695,-0.63420689};
-		aside[]={-0.96364045,4.8842048e-007,0.2673133};
+		pos[]={7819.4858,38.40974,3552.1572};
+		dir[]={-0.22318357,-0.74568933,-0.62782353};
+		up[]={-0.24977306,0.66628385,-0.70261991};
+		aside[]={-0.94224608,-3.8254075e-007,0.33495709};
 	};
 };
 binarizationWanted=0;
@@ -15708,17 +15708,18 @@ class Mission
 			dataType="Object";
 			class PositionInfo
 			{
-				position[]={7821.4282,6.7883987,3539.4707};
+				position[]={7821.4282,6.7883997,3539.4707};
 				angles[]={6.2805324,2.8744702,0};
 			};
 			side="Empty";
 			flags=4;
 			class Attributes
 			{
+				init="this call BONYO_fnc_setupLocker;";
 			};
 			id=52;
 			type="Box_NATO_AmmoVeh_F";
-			atlOffset=-1.4305115e-006;
+			atlOffset=-4.7683716e-007;
 			class CustomAttributes
 			{
 				class Attribute0
