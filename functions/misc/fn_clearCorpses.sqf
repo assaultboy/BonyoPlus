@@ -29,7 +29,7 @@ if !isServer exitWith {true};
 	} else {
 		//If it's a weapon pile that isn't in the donation area, delete it
 		if (_x isKindof "WeaponHolderSimulated" || _x isKindof "WeaponHolder") then {
-			if (!(_x getVariable ["bonyo_donationAction",false])) then {
+			if (!(_x getVariable ["BONYO_sellPileAction",false])) then {
 				deleteVehicle _x;
 			};
 		};
