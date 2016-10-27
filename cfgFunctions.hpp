@@ -34,6 +34,8 @@ class CfgFunctions
 			class spawnInfGroup {};
 			class spawnUnit {};
 			class spawnWave {};
+			
+			class debugGroup {};
 		};
 		
 		class money
