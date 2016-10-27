@@ -22,4 +22,4 @@
 if (!hasInterface) exitWith {true};
 
 BONYO_currentRound = (_this select 0);
-BONYO_roundMode = (_this select 1);
+BONYO_currentMode = (_this select 1);
