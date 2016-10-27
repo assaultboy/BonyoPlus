@@ -38,6 +38,7 @@ class CfgFunctions
 			class addSellPileAction {};
 			class sellPile {};
 			class giveMoney {};
+			class setMoney {};
 		};
 		
 		class setup
