@@ -42,6 +42,22 @@ _this addAction ["Start Wave", {
 	};
 }, nil, 6, false, true, "", "BONYO_currentMode == 'idle'"];
 
+
+//Add our sell option
+_this addAction ["Sell Items", {
+	private ["_box"];
+	
+	_box = ([] call BONYO_fnc_openLocalContainer);
+	
+	//When we close it we are going to get its contents and return the amount it's worth
+	_box addeventHandler ["ContainerClosed", {
+		(_this select 0) call BONYO_fnc_sellCargo;
+		
+		deleteVehicle (_this select 0);
+	}];
+}, nil, 6, false, true, "", "BONYO_currentMode == 'idle'"];
+
+/*
 //Add our tracker action
 _this addAction ["Spawn Trackers (pls no spam)", {
 	hint "Trackers Spawned";
@@ -64,3 +80,4 @@ _this addAction ["Spawn Trackers (pls no spam)", {
 		};
 	} forEach BONYO_activeEnemyUnitList;
 }, nil, 6, false, true, "", "BONYO_currentMode == 'activeround'"];
+*/

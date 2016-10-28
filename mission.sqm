@@ -5,10 +5,10 @@ class EditorData
 	angleGridStep=0.2617994;
 	scaleGridStep=1;
 	autoGroupingDist=10;
-	toggles=13;
+	toggles=9;
 	class ItemIDProvider
 	{
-		nextID=332;
+		nextID=376;
 	};
 	class MarkerIDProvider
 	{
@@ -16,10 +16,10 @@ class EditorData
 	};
 	class Camera
 	{
-		pos[]={7827.0186,38.799915,3525.488};
-		dir[]={-0.30712861,-0.64161295,0.70293915};
-		up[]={-0.25689757,0.76699769,0.58797485};
-		aside[]={0.91640097,-6.0303137e-008,0.40039396};
+		pos[]={7808.0039,31.734076,3543.1765};
+		dir[]={-0.236233,-0.75203109,-0.61554533};
+		up[]={-0.26946861,0.65906805,-0.70214516};
+		aside[]={-0.93371302,-1.2684613e-006,0.35833353};
 	};
 };
 binarizationWanted=0;
@@ -27,13 +27,6 @@ addons[]=
 {
 	"A3_Characters_F",
 	"A3_Ui_F",
-	"A3_Structures_F_Civ_InfoBoards",
-	"A3_Structures_F_System",
-	"A3_Structures_F_EPC_Civ_Accessories",
-	"101_editor",
-	"A3_Weapons_F_Ammoboxes",
-	"ace_dragging",
-	"A3_Structures_F_Bootcamp_VR_Helpers",
 	"A3_Modules_F_Curator_Curator",
 	"ace_advanced_throwing",
 	"ace_captives",
@@ -46,13 +39,17 @@ addons[]=
 	"ace_finger",
 	"ace_zeus",
 	"ace_medical",
-	"ace_medical_menu"
+	"ace_medical_menu",
+	"A3_Structures_F_Bootcamp_VR_Helpers",
+	"A3_3DEN",
+	"A3_Weapons_F_Ammoboxes",
+	"ace_dragging"
 };
 class AddonsMetaData
 {
 	class List
 	{
-		items=21;
+		items=19;
 		class Item0
 		{
 			className="A3_Characters_F";
@@ -69,132 +66,120 @@ class AddonsMetaData
 		};
 		class Item2
 		{
-			className="A3_Structures_F";
-			name="Arma 3 - Buildings and Structures";
-			author="Bohemia Interactive";
-			url="http://www.arma3.com";
-		};
-		class Item3
-		{
-			className="A3_Structures_F_EPC";
-			name="Arma 3 Win Episode - Buildings and Structures";
-			author="Bohemia Interactive";
-			url="http://www.arma3.com";
-		};
-		class Item4
-		{
-			className="101_editor";
-			name="101_editor";
-		};
-		class Item5
-		{
-			className="A3_Weapons_F";
-			name="Arma 3 Alpha - Weapons and Accessories";
-			author="Bohemia Interactive";
-			url="http://www.arma3.com";
-		};
-		class Item6
-		{
-			className="ace_dragging";
-			name="ACE3 - Dragging";
-			author="ACE-Team";
-			url="http://ace3mod.com/";
-		};
-		class Item7
-		{
-			className="A3_Structures_F_Bootcamp";
-			name="Arma 3 Bootcamp Update - Buildings and Structures";
-			author="Bohemia Interactive";
-			url="http://www.arma3.com";
-		};
-		class Item8
-		{
 			className="A3_Modules_F_Curator";
 			name="Arma 3 Zeus Update - Scripted Modules";
 			author="Bohemia Interactive";
 			url="http://www.arma3.com";
 		};
-		class Item9
+		class Item3
 		{
 			className="ace_advanced_throwing";
 			name="ACE3 - Advanced Throwing";
 			author="ACE-Team";
 			url="http://ace3mod.com/";
 		};
-		class Item10
+		class Item4
 		{
 			className="ace_captives";
 			name="ACE3 - Captives";
 			author="ACE-Team";
 			url="http://ace3mod.com/";
 		};
-		class Item11
+		class Item5
 		{
 			className="ace_hearing";
 			name="ACE3 - Hearing";
 			author="ACE-Team";
 			url="http://ace3mod.com/";
 		};
-		class Item12
+		class Item6
 		{
 			className="ace_interaction";
 			name="ACE3 - Interaction";
 			author="ACE-Team";
 			url="http://ace3mod.com/";
 		};
-		class Item13
+		class Item7
 		{
 			className="ace_map";
 			name="ACE3 - Map";
 			author="ACE-Team";
 			url="http://ace3mod.com/";
 		};
-		class Item14
+		class Item8
 		{
 			className="ace_map_gestures";
 			name="ACE3 - Map Gestures";
 			author="ACE-Team";
 			url="http://ace3mod.com/";
 		};
-		class Item15
+		class Item9
 		{
 			className="ace_mk6mortar";
 			name="ACE3 - Mk6 Mortar";
 			author="ACE-Team";
 			url="http://ace3mod.com/";
 		};
-		class Item16
+		class Item10
 		{
 			className="ace_nightvision";
 			name="ACE3 - Night Vision";
 			author="ACE-Team";
 			url="http://ace3mod.com/";
 		};
-		class Item17
+		class Item11
 		{
 			className="ace_finger";
 			name="ACE3 - Finger";
 			author="ACE-Team";
 			url="http://ace3mod.com/";
 		};
-		class Item18
+		class Item12
 		{
 			className="ace_zeus";
 			name="ACE3 - Zeus";
 			author="ACE-Team";
 			url="http://ace3mod.com/";
 		};
-		class Item19
+		class Item13
 		{
 			className="ace_medical";
 			name="ACE3 - Medical";
 			author="ACE-Team";
 			url="http://ace3mod.com/";
 		};
-		class Item20
+		class Item14
 		{
 			className="ace_medical_menu";
 			name="ACE3 - Medical Menu";
+			author="ACE-Team";
+			url="http://ace3mod.com/";
+		};
+		class Item15
+		{
+			className="A3_Structures_F_Bootcamp";
+			name="Arma 3 Bootcamp Update - Buildings and Structures";
+			author="Bohemia Interactive";
+			url="http://www.arma3.com";
+		};
+		class Item16
+		{
+			className="A3_3DEN";
+			name="Arma 3 Eden Update - Eden Editor";
+			author="Bohemia Interactive";
+			url="http://www.arma3.com";
+		};
+		class Item17
+		{
+			className="A3_Weapons_F";
+			name="Arma 3 Alpha - Weapons and Accessories";
+			author="Bohemia Interactive";
+			url="http://www.arma3.com";
+		};
+		class Item18
+		{
+			className="ace_dragging";
+			name="ACE3 - Dragging";
 			author="ACE-Team";
 			url="http://ace3mod.com/";
 		};
@@ -1287,7 +1272,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=36;
+		items=32;
 		class Item0
 		{
 			dataType="Group";
@@ -15532,353 +15517,6 @@ class Mission
 		};
 		class Item14
 		{
-			dataType="Object";
-			class PositionInfo
-			{
-				position[]={7820.7349,6.564043,3533.9185};
-				angles[]={6.2805324,1.2888907,0};
-			};
-			side="Empty";
-			flags=4;
-			class Attributes
-			{
-				init="this call BONYO_fnc_setupRoundControl";
-			};
-			id=41;
-			type="Land_InfoStand_V2_F";
-			class CustomAttributes
-			{
-				class Attribute0
-				{
-					property="allowDamage";
-					expression="_this allowdamage _value;";
-					class Value
-					{
-						class data
-						{
-							class type
-							{
-								type[]=
-								{
-									"BOOL"
-								};
-							};
-							value=0;
-						};
-					};
-				};
-				class Attribute1
-				{
-					property="enableSimulation";
-					expression="if !(is3DEN) then {_this enablesimulationglobal _value;};";
-					class Value
-					{
-						class data
-						{
-							class type
-							{
-								type[]=
-								{
-									"BOOL"
-								};
-							};
-							value=1;
-						};
-					};
-				};
-				class Attribute2
-				{
-					property="ace_isMedicalFacility";
-					expression="_this setVariable [""ace_medical_isMedicalFacility"",_value,true];";
-					class Value
-					{
-						class data
-						{
-							class type
-							{
-								type[]=
-								{
-									"BOOL"
-								};
-							};
-							value=0;
-						};
-					};
-				};
-				nAttributes=3;
-			};
-		};
-		class Item15
-		{
-			dataType="Object";
-			class PositionInfo
-			{
-				position[]={7819.1313,5.9869871,3535.1519};
-				angles[]={6.2805333,0,0};
-			};
-			side="Empty";
-			flags=4;
-			class Attributes
-			{
-			};
-			id=44;
-			type="Land_ClutterCutter_large_F";
-			atlOffset=-8.4877014e-005;
-		};
-		class Item16
-		{
-			dataType="Object";
-			class PositionInfo
-			{
-				position[]={7819.8452,7.2731023,3537.1909};
-				angles[]={0,1.3061869,0};
-			};
-			side="Empty";
-			flags=5;
-			class Attributes
-			{
-			};
-			id=51;
-			type="Land_Atm_01_F";
-			atlOffset=-4.7683716e-007;
-			class CustomAttributes
-			{
-				class Attribute0
-				{
-					property="allowDamage";
-					expression="_this allowdamage _value;";
-					class Value
-					{
-						class data
-						{
-							class type
-							{
-								type[]=
-								{
-									"BOOL"
-								};
-							};
-							value=0;
-						};
-					};
-				};
-				class Attribute1
-				{
-					property="enableSimulation";
-					expression="if !(is3DEN) then {_this enablesimulationglobal _value;};";
-					class Value
-					{
-						class data
-						{
-							class type
-							{
-								type[]=
-								{
-									"BOOL"
-								};
-							};
-							value=1;
-						};
-					};
-				};
-				class Attribute2
-				{
-					property="ace_isMedicalFacility";
-					expression="_this setVariable [""ace_medical_isMedicalFacility"",_value,true];";
-					class Value
-					{
-						class data
-						{
-							class type
-							{
-								type[]=
-								{
-									"BOOL"
-								};
-							};
-							value=0;
-						};
-					};
-				};
-				nAttributes=3;
-			};
-		};
-		class Item17
-		{
-			dataType="Object";
-			class PositionInfo
-			{
-				position[]={7821.4282,6.7883997,3539.4707};
-				angles[]={6.2805324,2.8744702,0};
-			};
-			side="Empty";
-			flags=4;
-			class Attributes
-			{
-				init="this call BONYO_fnc_setupLocker;";
-			};
-			id=52;
-			type="Box_NATO_AmmoVeh_F";
-			atlOffset=-4.7683716e-007;
-			class CustomAttributes
-			{
-				class Attribute0
-				{
-					property="allowDamage";
-					expression="_this allowdamage _value;";
-					class Value
-					{
-						class data
-						{
-							class type
-							{
-								type[]=
-								{
-									"BOOL"
-								};
-							};
-							value=0;
-						};
-					};
-				};
-				class Attribute1
-				{
-					property="enableSimulation";
-					expression="if !(is3DEN) then {_this enablesimulationglobal _value;};";
-					class Value
-					{
-						class data
-						{
-							class type
-							{
-								type[]=
-								{
-									"BOOL"
-								};
-							};
-							value=1;
-						};
-					};
-				};
-				class Attribute2
-				{
-					property="ace_isMedicalFacility";
-					expression="_this setVariable [""ace_medical_isMedicalFacility"",_value,true];";
-					class Value
-					{
-						class data
-						{
-							class type
-							{
-								type[]=
-								{
-									"BOOL"
-								};
-							};
-							value=0;
-						};
-					};
-				};
-				class Attribute3
-				{
-					property="ammoBox";
-					expression="[_this,_value] call bis_fnc_initAmmoBox;";
-					class Value
-					{
-						class data
-						{
-							class type
-							{
-								type[]=
-								{
-									"STRING"
-								};
-							};
-							value="[[[[],[]],[[],[]],[[],[]],[[],[]]],true]";
-						};
-					};
-				};
-				nAttributes=4;
-			};
-		};
-		class Item18
-		{
-			dataType="Object";
-			class PositionInfo
-			{
-				position[]={7816.479,6.0883288,3542.207};
-			};
-			side="Empty";
-			flags=1;
-			class Attributes
-			{
-				init="this call BONYO_fnc_setupSellArea";
-			};
-			id=53;
-			type="VR_Area_01_circle_4_yellow_F";
-			atlOffset=0.078999996;
-			class CustomAttributes
-			{
-				class Attribute0
-				{
-					property="allowDamage";
-					expression="_this allowdamage _value;";
-					class Value
-					{
-						class data
-						{
-							class type
-							{
-								type[]=
-								{
-									"BOOL"
-								};
-							};
-							value=0;
-						};
-					};
-				};
-				class Attribute1
-				{
-					property="ace_isMedicalFacility";
-					expression="_this setVariable [""ace_medical_isMedicalFacility"",_value,true];";
-					class Value
-					{
-						class data
-						{
-							class type
-							{
-								type[]=
-								{
-									"BOOL"
-								};
-							};
-							value=0;
-						};
-					};
-				};
-				nAttributes=2;
-			};
-		};
-		class Item19
-		{
-			dataType="Object";
-			class PositionInfo
-			{
-				position[]={7816.6436,6.0099077,3542.4839};
-				angles[]={6.2791886,0,0};
-			};
-			side="Empty";
-			flags=4;
-			class Attributes
-			{
-			};
-			id=54;
-			type="Land_ClutterCutter_large_F";
-			atlOffset=-2.8610229e-005;
-		};
-		class Item20
-		{
 			dataType="Logic";
 			class PositionInfo
 			{
@@ -15987,7 +15625,7 @@ class Mission
 				nAttributes=5;
 			};
 		};
-		class Item21
+		class Item15
 		{
 			dataType="Marker";
 			position[]={7809.8809,2.1675527e+021,3506.4753};
@@ -15997,7 +15635,7 @@ class Mission
 			id=58;
 			atlOffset=2.1675527e+021;
 		};
-		class Item22
+		class Item16
 		{
 			dataType="Logic";
 			class PositionInfo
@@ -16107,7 +15745,7 @@ class Mission
 				nAttributes=5;
 			};
 		};
-		class Item23
+		class Item17
 		{
 			dataType="Logic";
 			class PositionInfo
@@ -16179,7 +15817,7 @@ class Mission
 				nAttributes=3;
 			};
 		};
-		class Item24
+		class Item18
 		{
 			dataType="Logic";
 			class PositionInfo
@@ -16270,7 +15908,7 @@ class Mission
 				nAttributes=4;
 			};
 		};
-		class Item25
+		class Item19
 		{
 			dataType="Logic";
 			class PositionInfo
@@ -16304,7 +15942,7 @@ class Mission
 				nAttributes=1;
 			};
 		};
-		class Item26
+		class Item20
 		{
 			dataType="Logic";
 			class PositionInfo
@@ -16433,7 +16071,7 @@ class Mission
 				nAttributes=6;
 			};
 		};
-		class Item27
+		class Item21
 		{
 			dataType="Logic";
 			class PositionInfo
@@ -16543,7 +16181,7 @@ class Mission
 				nAttributes=5;
 			};
 		};
-		class Item28
+		class Item22
 		{
 			dataType="Logic";
 			class PositionInfo
@@ -16634,7 +16272,7 @@ class Mission
 				nAttributes=4;
 			};
 		};
-		class Item29
+		class Item23
 		{
 			dataType="Logic";
 			class PositionInfo
@@ -16668,7 +16306,7 @@ class Mission
 				nAttributes=1;
 			};
 		};
-		class Item30
+		class Item24
 		{
 			dataType="Logic";
 			class PositionInfo
@@ -16721,7 +16359,7 @@ class Mission
 				nAttributes=2;
 			};
 		};
-		class Item31
+		class Item25
 		{
 			dataType="Logic";
 			class PositionInfo
@@ -16850,7 +16488,7 @@ class Mission
 				nAttributes=6;
 			};
 		};
-		class Item32
+		class Item26
 		{
 			dataType="Logic";
 			class PositionInfo
@@ -16903,7 +16541,7 @@ class Mission
 				nAttributes=2;
 			};
 		};
-		class Item33
+		class Item27
 		{
 			dataType="Logic";
 			class PositionInfo
@@ -16937,7 +16575,7 @@ class Mission
 				nAttributes=1;
 			};
 		};
-		class Item34
+		class Item28
 		{
 			dataType="Logic";
 			class PositionInfo
@@ -17047,13 +16685,150 @@ class Mission
 				nAttributes=5;
 			};
 		};
-		class Item35
+		class Item29
 		{
 			dataType="Marker";
 			position[]={8674.25,6.843236,2450.3796};
 			name="marker_14";
 			type="mil_join";
 			id=260;
+		};
+		class Item30
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={7818.98,7.0389395,3536.2271};
+			};
+			side="Empty";
+			flags=5;
+			class Attributes
+			{
+				init="this call BONYO_fnc_setupRoundControl;";
+			};
+			id=332;
+			type="VR_3DSelector_01_default_F";
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="ace_isMedicalFacility";
+					expression="_this setVariable [""ace_medical_isMedicalFacility"",_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"BOOL"
+								};
+							};
+							value=0;
+						};
+					};
+				};
+				nAttributes=1;
+			};
+		};
+		class Item31
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={7821.4282,6.7883997,3539.4707};
+				angles[]={6.2805324,2.8744702,0};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+				init="this call BONYO_fnc_setupLocker;";
+			};
+			id=52;
+			type="Box_NATO_AmmoVeh_F";
+			atlOffset=-4.7683716e-007;
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="allowDamage";
+					expression="_this allowdamage _value;";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"BOOL"
+								};
+							};
+							value=0;
+						};
+					};
+				};
+				class Attribute1
+				{
+					property="enableSimulation";
+					expression="if !(is3DEN) then {_this enablesimulationglobal _value;};";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"BOOL"
+								};
+							};
+							value=1;
+						};
+					};
+				};
+				class Attribute2
+				{
+					property="ace_isMedicalFacility";
+					expression="_this setVariable [""ace_medical_isMedicalFacility"",_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"BOOL"
+								};
+							};
+							value=0;
+						};
+					};
+				};
+				class Attribute3
+				{
+					property="ammoBox";
+					expression="[_this,_value] call bis_fnc_initAmmoBox;";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="[[[[],[]],[[],[]],[[],[]],[[],[]]],true]";
+						};
+					};
+				};
+				nAttributes=4;
+			};
 		};
 	};
 };

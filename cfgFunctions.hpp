@@ -41,15 +41,13 @@ class CfgFunctions
 		
 		class money
 		{
-			class addSellPileAction {};
-			class sellPile {};
+			class sellCargo	{};
 			class giveMoney {};
 			class setMoney {};
 		};
 		
 		class setup
 		{
-			class setupSellArea {};
 			class setupRoundControl {};
 			class setupLocker {};
 			

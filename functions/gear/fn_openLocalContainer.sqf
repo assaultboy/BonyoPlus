@@ -28,6 +28,11 @@ _box hideObject true;
 //Attach it to the player
 _box attachTo [player, [0,0,0]];
 
+clearItemCargo _box;
+clearWeaponCargo _box;
+clearMagazineCargo _box;
+clearBackpackCargo _box;
+
 //Force the player to open it
 player action ["gear", _box];
 
