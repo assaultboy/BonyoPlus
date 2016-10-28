@@ -8,6 +8,7 @@ class CfgFunctions
 			class getCargo {};
 			class setCargo {};
 			class resetLocker {};
+			class openLocalContainer {};
 		};
 		
 		class misc

@@ -20,25 +20,19 @@ _this enableSimulation false;
 _this allowDamage false;
 
 _this addEventHandler ["ContainerOpened", {
-	private ["_box","_player","_personalBox"];
+	private ["_box"];
 	
-	_box = (_this select 0);
-	_player = (_this select 1);
+	//Create a local container so no one else can mess with our stuff
+	_box = ([] call BONYO_fnc_openLocalContainer);
 	
-	_personalBox = "B_Truck_01_box_F" createVehicleLocal [0,0,5000];
-	_personalBox allowDamage false;
-	_personalBox hideObject true;
+	//Populate it with our personal locker
+	[_box, profileNamespace getVariable ["BONYOPLUS_locker", [[], [], [], []]]] call BONYO_fnc_setCargo;
 	
-	_personalBox attachTo [_player, [0,0,0]];
-	
-	[_personalBox, profileNamespace getVariable ["BONYOPLUS_locker", [[], [], [], []]]] call BONYO_fnc_setCargo;
-	
-	_personalBox addeventHandler ["ContainerClosed", {
+	//When we close it we are going to save its contents and delete it
+	_box addeventHandler ["ContainerClosed", {
 		profileNameSpace setvariable ["BONYOPLUS_locker", (_this select 0) call BONYO_fnc_getCargo];
 		saveProfileNamespace;
 		
 		deleteVehicle (_this select 0);
 	}];
-	
-	_player action ["gear", _personalBox];
 }];
