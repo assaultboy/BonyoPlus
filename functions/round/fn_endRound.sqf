@@ -49,8 +49,7 @@ if (BONYO_currentMode == "activeround") then {
 	};
 	
 	//Sync the servers variables with all the clients
-	[BONYO_currentRound,
-	BONYO_currentMode] remoteExec ["BONYO_fnc_syncVariables", -2];
+	[] call BONYO_fnc_syncVariables;
 	
 //A round is already active
 } else {

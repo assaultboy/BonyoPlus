@@ -2,24 +2,35 @@
 	BONYO_fnc_syncVariables
 	
 	DESCRIPTION:
-		This function is called from the server on every client.
-		This function will update the client variables
+		This function, when called on the server, forces all clients to sync their variables to the server
+		This function, when called on a client, will sync the local variables to the ones given
 		
-	PARAMETERS:
+	PARAMETERS (CALLED ON CLIENT):
 		0 NUMBER:
 			The current Wave Number
 		
 		1 STRING:
 			The current mode
 			
+	PARAMETERS (CALLED ON SERVER):
+		Nothing
+			
 	RETURNS
-		nothing
+		Nothing
 		
 	EXAMPLE
-		[1,true] remoteExec ["BONYO_fnc_syncVariables", -2];
+		[] call BONYO_fnc_syncVariables;
 */
 
-if (!hasInterface) exitWith {true};
+//Don't mess around with anything if we are in SP
+if (hasInterface && isServer) exitWith {true};
 
-BONYO_currentRound = (_this select 0);
-BONYO_currentMode = (_this select 1);
+//We are a client
+if (hasInterface) then {
+	BONYO_currentRound = (_this select 0);
+	BONYO_currentMode = (_this select 1);
+};
+
+if (isServer) then {
+	[BONYO_currentRound, BONYO_currentMode] remoteExec ["BONYO_fnc_syncVariables", -2];
+};
