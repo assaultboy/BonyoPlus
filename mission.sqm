@@ -5,10 +5,10 @@ class EditorData
 	angleGridStep=0.2617994;
 	scaleGridStep=1;
 	autoGroupingDist=10;
-	toggles=9;
+	toggles=141;
 	class ItemIDProvider
 	{
-		nextID=376;
+		nextID=377;
 	};
 	class MarkerIDProvider
 	{
@@ -16,10 +16,10 @@ class EditorData
 	};
 	class Camera
 	{
-		pos[]={7808.0039,31.734076,3543.1765};
-		dir[]={-0.236233,-0.75203109,-0.61554533};
-		up[]={-0.26946861,0.65906805,-0.70214516};
-		aside[]={-0.93371302,-1.2684613e-006,0.35833353};
+		pos[]={7845.4526,47.714706,3533.9011};
+		dir[]={0.96359706,-0.2545622,-0.083260499};
+		up[]={0.25379509,0.96700752,-0.021929981};
+		aside[]={-0.086089566,1.5640835e-006,-0.99640125};
 	};
 };
 binarizationWanted=0;
@@ -43,13 +43,14 @@ addons[]=
 	"A3_Structures_F_Bootcamp_VR_Helpers",
 	"A3_3DEN",
 	"A3_Weapons_F_Ammoboxes",
-	"ace_dragging"
+	"ace_dragging",
+	"ace_advanced_fatigue"
 };
 class AddonsMetaData
 {
 	class List
 	{
-		items=19;
+		items=20;
 		class Item0
 		{
 			className="A3_Characters_F";
@@ -180,6 +181,13 @@ class AddonsMetaData
 		{
 			className="ace_dragging";
 			name="ACE3 - Dragging";
+			author="ACE-Team";
+			url="http://ace3mod.com/";
+		};
+		class Item19
+		{
+			className="ace_advanced_fatigue";
+			name="ACE3 - Advanced Fatigue";
 			author="ACE-Team";
 			url="http://ace3mod.com/";
 		};
@@ -1272,7 +1280,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=32;
+		items=33;
 		class Item0
 		{
 			dataType="Group";
@@ -16828,6 +16836,117 @@ class Mission
 					};
 				};
 				nAttributes=4;
+			};
+		};
+		class Item32
+		{
+			dataType="Logic";
+			class PositionInfo
+			{
+				position[]={7956,22.000103,3545};
+				angles[]={6.1012173,0,0.20889845};
+			};
+			id=376;
+			type="ace_advanced_fatigue_moduleSettings";
+			atlOffset=-0.042001724;
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="ace_advanced_fatigue_moduleSettings_TerrainGradientFactor";
+					expression="_this setVariable ['TerrainGradientFactor',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"SCALAR"
+								};
+							};
+							value=0;
+						};
+					};
+				};
+				class Attribute1
+				{
+					property="ace_advanced_fatigue_moduleSettings_Enabled";
+					expression="_this setVariable ['Enabled',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"BOOL"
+								};
+							};
+							value=1;
+						};
+					};
+				};
+				class Attribute2
+				{
+					property="ace_advanced_fatigue_moduleSettings_RecoveryFactor";
+					expression="_this setVariable ['RecoveryFactor',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"SCALAR"
+								};
+							};
+							value=9.9999998e+010;
+						};
+					};
+				};
+				class Attribute3
+				{
+					property="ace_advanced_fatigue_moduleSettings_LoadFactor";
+					expression="_this setVariable ['LoadFactor',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"SCALAR"
+								};
+							};
+							value=0;
+						};
+					};
+				};
+				class Attribute4
+				{
+					property="ace_advanced_fatigue_moduleSettings_PerformanceFactor";
+					expression="_this setVariable ['PerformanceFactor',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"SCALAR"
+								};
+							};
+							value=9.9999998e+010;
+						};
+					};
+				};
+				nAttributes=5;
 			};
 		};
 	};
