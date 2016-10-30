@@ -33,4 +33,7 @@ _unit setVariable ["NOAI",1,false];
 //Set our rank
 _unit setRank (_this select 1);
 
+//Add this unit to our spectator list
+[[_unit],false] remoteExec ["ace_spectator_fnc_updateUnits", 0];
+
 _unit
