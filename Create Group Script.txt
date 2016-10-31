@@ -1,0 +1,15 @@
+private ["_txt"];
+_txt = "//TYPE OF TEAM HERE
+_groupList pushBack [";
+
+{
+    _txt = _txt + (format ["
+        ['%1','%2'],", typeOf _x, rank _x]);
+} forEach units (group (_this select 1));
+
+_txt = _txt + "
+];";
+
+diag_log _txt;
+
+systemChat "Printed Code";
