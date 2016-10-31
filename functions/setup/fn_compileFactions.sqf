@@ -20,5 +20,10 @@ if (!isServer) exitWith {true};
 
 //Infantry Faction List
 {
-	BONYO_enemyInfFactionList pushBack (compile (preprocessFileLineNumbers (format ["functions\ai\factions\%1.sqf", _x])));
+	BONYO_enemyInfFactionList pushBack (compile (preprocessFileLineNumbers (format ["functions\ai\infFactions\%1.sqf", _x])));
 } forEach ["NATO","CSAT","RUSSIAN", "ISAS", "HPM"];
+
+//Vehicle Faction List
+{
+	BONYO_enemyVicFactionList pushBack (compile (preprocessFileLineNumbers (format ["functions\ai\vicFactions\%1.sqf", _x])));
+} forEach ["ISAS"];

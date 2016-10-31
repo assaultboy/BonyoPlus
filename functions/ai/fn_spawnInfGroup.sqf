@@ -20,16 +20,15 @@
 //Server only
 if (!isServer) exitWith {true};
 
-private ["_groupProto","_grp","_spawnPoint"];
+private ["_groupProto","_grp"];
 
-_spawnPoint = _this;
 _grp = createGroup EAST;
 
 _groupProto = [] call (BONYO_enemyInfFactionList call BIS_fnc_selectRandom);
 
 //Spawn each member of the group and set them up for bonyo
 {
-	[_x select 0, _x select 1 ,_spawnPoint, _grp] call BONYO_fnc_spawnUnit;
+	[_x select 0, _x select 1 ,_this, _grp] call BONYO_fnc_spawnUnit;
 } forEach _groupProto;
 
 

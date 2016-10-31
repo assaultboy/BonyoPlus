@@ -27,4 +27,9 @@ if (!isServer) exitWith {true};
 	if (toString _markerName == "ai_spawn_inf_") then {
 		BONYO_enemyInfSpawnList pushBack _x;
 	};
+	
+	//If it is a vehicle spawn point add it to our list
+	if (toString _markerName == "ai_spawn_vic_") then {
+		BONYO_enemyVicSpawnList pushBack _x;
+	};
 } forEach allMapMarkers;

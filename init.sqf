@@ -17,6 +17,7 @@ if (isServer) then {
 	BONYO_activeEnemyUnitList = [];
 	
 	BONYO_enemyInfSpawnList = [];
+	BONYO_enemyVicSpawnList = [];
 	[] call BONYO_fnc_compileMarkerLists;
 	
 	BONYO_roundCompleteRemarks = [];
@@ -24,5 +25,6 @@ if (isServer) then {
 	[] call BONYO_fnc_compileRemarks;
 	
 	BONYO_enemyInfFactionList = [];
+	BONYO_enemyVicFactionList = [];
 	[] call BONYO_fnc_compileFactions;
 };

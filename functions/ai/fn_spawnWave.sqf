@@ -22,7 +22,7 @@ if (!isServer) exitWith {true};
 //Cleanup the last round
 [getMarkerPos "area_base" ,10000] call BONYO_fnc_clearCorpses;
 
-private ["_wave","_playerCount","_maxGroups","_groupCount"];
+private ["_wave","_playerCount","_maxGroups","_groupCount", "_vicMod"];
 
 _wave = _this;
 
@@ -38,6 +38,9 @@ _maxGroups = round _maxGroups;
 
 _groupCount = (_wave min _maxGroups);
 
+//floor (Wave / _vicMod) = Number of vehicles to spawn (Only on key waves)
+_vicMod = (10 / _playerCount);
+
 
 private ["_i"];
 
@@ -51,6 +54,21 @@ for [{_i=1}, {_i<=_groupCount}, {_i=_i+1}] do {
 	{
 		BONYO_activeEnemyUnitList pushBack _x;
 	} forEach units _grp;
+};
+
+//Spawn any vehicles
+if ((floor (_wave / _vicMod)) > (floor ((_wave - 1) / _vicMod))) then {
+	for [{_i=1}, {_i<=(floor (_wave / _vicMod))}, {_i=_i+1}] do {
+		private ["_grp"];
+		
+		_grp = (getMarkerPos (BONYO_enemyVicSpawnList call BIS_fnc_selectRandom)) call BONYO_fnc_spawnVicGroup;
+		_grp addWaypoint [getMarkerPos "respawn", 50];
+		
+		//Add units to the enemy list so we can check if they're all dead
+		{
+			BONYO_activeEnemyUnitList pushBack _x;
+		} forEach units _grp;
+	};
 };
 
 //Start the round tracker
