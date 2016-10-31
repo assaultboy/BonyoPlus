@@ -15,6 +15,7 @@ class CfgFunctions
 		{
 			class print {};
 			class syncVariables {};
+			class requestSync {};
 			class clearCorpses {};
 		};
 		

@@ -1,5 +1,8 @@
 //Force the player to have the correct loadout
 
+//Request our sync
+[] call BONOY_fnc_requestSync;
+
 //First thing is first, set the players gear
 player call BONYO_fnc_setPlayerSpawnGear;
 
