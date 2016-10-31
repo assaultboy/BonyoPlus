@@ -1,3 +1,7 @@
+private ["_fullTxt"];
+
+_fullTxt = "";
+
 {
 	private ["_txt"];
 	_txt = format ["//%1
@@ -11,7 +15,11 @@
 	_txt = _txt + "
 	];";
 
-	diag_log _txt;
+	_fullTxt = _fullTxt + "
+	
+	" + _txt;
 } forEach allGroups;
 
-systemChat "Printed Code";
+copyToClipboard _fullTxt;
+
+systemChat "Groups Copied to Clipboard";
