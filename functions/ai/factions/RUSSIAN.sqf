@@ -2,58 +2,70 @@ private ["_groupList"];
 
 _groupList = [];
 
-//Sharpshooter Team
-_groupList pushBack [
-    ["rhs_vdv_marksman","SERGEANT"],
-    ["rhs_vdv_marksman","CORPORAL"]
+//Grenedier Team 
+_groupList pushBack [ 
+	['rhs_msv_emr_junior_sergeant','CORPORAL'],
+	['rhs_msv_emr_grenadier_rpg','PRIVATE'],
+	['rhs_msv_emr_strelok_rpg_assist','PRIVATE']
 ];
 
-//Engineer Team
-_groupList pushBack [
-       ['rhs_vdv_engineer','SERGEANT'],
-       ['rhs_vdv_rifleman','PRIVATE'],
-       ['rhs_vdv_rifleman','PRIVATE'],
-       ['rhs_vdv_rifleman','PRIVATE']
+//Rifle Team
+_groupList pushBack [ 
+	['rhs_msv_emr_sergeant','SERGEANT'],
+	['rhs_msv_emr_arifleman','PRIVATE'],
+	['rhs_msv_emr_junior_sergeant','CORPORAL'],
+	['rhs_msv_emr_rifleman','PRIVATE']
 ];
 
-//Fireteam
-_groupList pushBack [
-       ['rhs_vdv_grenadier','CORPORAL'],
-       ['rhs_vdv_rifleman','PRIVATE'],
-       ['rhs_vdv_rifleman','PRIVATE'],
-       ['rhs_vdv_machinegunner','PRIVATE'],
-       ['rhs_vdv_machinegunner_assistant','PRIVATE']
+//Weapons Team
+_groupList pushBack [ 
+	['rhs_msv_emr_sergeant','SERGEANT'],
+	['rhs_msv_emr_machinegunner','CORPORAL'],
+	['rhs_msv_emr_machinegunner','CORPORAL'],
+	['rhs_msv_emr_machinegunner_assistant','PRIVATE'],
+	['rhs_msv_emr_machinegunner_assistant','PRIVATE']
 ];
 
-//RPG Team
+//Marksman Team
 _groupList pushBack [
-       ['rhs_vdv_junior_sergeant','SERGEANT'],
-       ['rhs_vdv_at','CORPORAL'],
-       ['rhs_vdv_at','PRIVATE'],
-       ['rhs_vdv_medic','PRIVATE']
+	['rhs_msv_emr_marksman','PRIVATE'],
+	['rhs_msv_emr_marksman','CORPORAL']
 ];
 
-//MG Team
-_groupList pushBack [
-       ['rhs_vdv_machinegunner','SERGEANT'],
-       ['rhs_vdv_machinegunner','PRIVATE'],
-       ['rhs_vdv_machinegunner','CORPORAL'],
-       ['rhs_vdv_machinegunner','CORPORAL'],
-       ['rhs_vdv_medic','PRIVATE']
+//Specialist Team
+_groupList pushBack [ 
+	['rhs_msv_emr_efreitor','CORPORAL'],
+	['rhs_msv_emr_LAT','PRIVATE'],
+	['rhs_msv_emr_medic','PRIVATE']
 ];
 
-//Anti-Air Team
-_groupList pushBack [
-       ['rhs_vdv_aa','CORPORAL'],
-       ['rhs_vdv_aa','PRIVATE'],
-       ['rhs_vdv_aa','PRIVATE']
+//SF Team
+_groupList pushBack [ 
+	['rhs_vdv_recon_rifleman_akms','LIEUTENANT'],
+	['rhs_vdv_recon_rifleman_akms','SERGEANT'],
+	['rhs_vdv_recon_rifleman_akms','SERGEANT']
 ];
 
-//Anti-Tank Team
-_groupList pushBack [
-       ['rhs_vdv_at','CORPORAL'],
-       ['rhs_vdv_at','PRIVATE'],
-       ['rhs_vdv_at','PRIVATE']
+//Scout Team
+_groupList pushBack [ 
+	['rhs_vdv_recon_marksman_asval','LIEUTENANT'],
+	['rhs_vdv_recon_marksman_asval','LIEUTENANT']
+];
+
+//AT Team
+_groupList pushBack [ 
+	['rhs_msv_emr_sergeant','SERGEANT'],
+	['rhs_msv_emr_at','CORPORAL'],
+	['rhs_msv_emr_rifleman','PRIVATE'],
+	['rhs_msv_emr_rifleman','PRIVATE']
+];
+
+//AA Team
+_groupList pushBack [ 
+        ['rhs_msv_emr_sergeant','SERGEANT'],
+        ['rhs_msv_emr_aa','CORPORAL'],
+        ['rhs_msv_emr_rifleman','PRIVATE'],
+        ['rhs_msv_emr_rifleman','PRIVATE']
 ];
 
 (_groupList call BIS_fnc_selectRandom)
