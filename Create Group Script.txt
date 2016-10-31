@@ -1,15 +1,17 @@
-private ["_txt"];
-_txt = "//TYPE OF TEAM HERE
-_groupList pushBack [";
-
 {
-    _txt = _txt + (format ["
-        ['%1','%2'],", typeOf _x, rank _x]);
-} forEach units (group (_this select 1));
+	private ["_txt"];
+	_txt = format ["//%1
+	_groupList pushBack [", groupID _x];
 
-_txt = _txt + "
-];";
+	{
+		_txt = _txt + (format ["
+			['%1','%2'],", typeOf _x, rank _x]);
+	} forEach units _x;
 
-diag_log _txt;
+	_txt = _txt + "
+	];";
+
+	diag_log _txt;
+} forEach allGroups;
 
 systemChat "Printed Code";
