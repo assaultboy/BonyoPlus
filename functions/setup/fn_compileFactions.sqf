@@ -26,4 +26,4 @@ if (!isServer) exitWith {true};
 //Vehicle Faction List
 {
 	BONYO_enemyVicFactionList pushBack (compile (preprocessFileLineNumbers (format ["functions\ai\vicFactions\%1.sqf", _x])));
-} forEach ["ISAS", "FIA", "USARMY","NATIONALISTS"];
+} forEach ["NATO", "ISAS", "FIA", "USARMY","NATIONALISTS"];
