@@ -16,10 +16,10 @@ class EditorData
 	};
 	class Camera
 	{
-		pos[]={5472.0127,341.30939,2524.2646};
-		dir[]={0.77440548,-0.599792,-0.2019162};
-		up[]={0.58043611,0.80012107,-0.15134221};
-		aside[]={-0.25232777,-6.3842162e-007,-0.9677484};
+		pos[]={5952.3955,85.821007,2589.2502};
+		dir[]={-0.41482174,-0.33339763,0.84676188};
+		up[]={-0.14672934,0.94274175,0.29951552};
+		aside[]={0.89812666,-9.2992559e-007,0.43998516};
 	};
 };
 binarizationWanted=0;
@@ -15535,7 +15535,7 @@ class Mission
 		class Item5
 		{
 			dataType="Marker";
-			position[]={5914.0713,2.1675527e+021,2598.7251};
+			position[]={5933.7075,2.1675527e+021,2611.895};
 			name="respawn";
 			type="Empty";
 			angle=183.02267;
@@ -17162,17 +17162,41 @@ class Mission
 			dataType="Object";
 			class PositionInfo
 			{
-				position[]={5919.4272,72.580269,2610.7837};
-				angles[]={0,2.6560645,0};
+				position[]={5919.4268,72.580002,2610.7839};
+				angles[]={0,2.6560595,0};
 			};
 			side="Empty";
 			flags=1;
 			class Attributes
 			{
+				init="this allowDamage false;";
 			};
 			id=409;
 			type="Land_Unfinished_Building_02_F";
-			atlOffset=1.0013199;
+			atlOffset=1.0009995;
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="ace_isMedicalFacility";
+					expression="_this setVariable [""ace_medical_isMedicalFacility"",_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"BOOL"
+								};
+							};
+							value=0;
+						};
+					};
+				};
+				nAttributes=1;
+			};
 		};
 		class Item24
 		{
@@ -17278,17 +17302,18 @@ class Mission
 			dataType="Object";
 			class PositionInfo
 			{
-				position[]={5920.1465,72.354805,2599.075};
-				angles[]={0,4.250649,0};
+				position[]={5920.146,72.354828,2599.075};
+				angles[]={0,4.2506447,0};
 			};
 			side="Empty";
 			flags=1;
 			class Attributes
 			{
+				init="this allowDamage false;";
 			};
 			id=410;
 			type="Land_Unfinished_Building_01_F";
-			atlOffset=2.2450104;
+			atlOffset=2.2450027;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -17359,33 +17384,82 @@ class Mission
 			dataType="Object";
 			class PositionInfo
 			{
-				position[]={5938.1392,69.394043,2594.5256};
-				angles[]={0,2.5571623,0};
+				position[]={5938.1392,69.394051,2594.5259};
+				angles[]={0,2.5571692,0};
 			};
 			side="Empty";
 			flags=5;
 			class Attributes
 			{
+				init="this allowDamage false;";
 			};
 			id=923;
 			type="Land_d_House_Big_02_V1_F";
+			atlOffset=-7.6293945e-006;
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="ace_isMedicalFacility";
+					expression="_this setVariable [""ace_medical_isMedicalFacility"",_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"BOOL"
+								};
+							};
+							value=0;
+						};
+					};
+				};
+				nAttributes=1;
+			};
 		};
 		class Item42
 		{
 			dataType="Object";
 			class PositionInfo
 			{
-				position[]={5944.5063,71.863655,2616.1399};
-				angles[]={0,5.7478509,0};
+				position[]={5944.5059,71.863876,2616.1399};
+				angles[]={0,5.747858,0};
 			};
 			side="Empty";
 			flags=1;
 			class Attributes
 			{
+				init="this allowDamage false;";
 			};
 			id=925;
 			type="Land_i_House_Big_01_V1_F";
-			atlOffset=1.165802;
+			atlOffset=1.1659927;
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="ace_isMedicalFacility";
+					expression="_this setVariable [""ace_medical_isMedicalFacility"",_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"BOOL"
+								};
+							};
+							value=0;
+						};
+					};
+				};
+				nAttributes=1;
+			};
 		};
 	};
 };
