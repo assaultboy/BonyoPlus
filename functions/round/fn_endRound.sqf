@@ -33,6 +33,33 @@ if (BONYO_currentMode == "activeround") then {
 		["WaveComplete", [BONYO_currentRound, BONYO_roundCompleteRemarks call BIS_fnc_selectRandom]] remoteExec ["BIS_fnc_showNotification", 0];
 		
 		BONYO_currentRound = BONYO_currentRound + 1;
+		
+		//Start the loot countdown
+		BONYO_currentRound spawn {
+			"You have (5) Minutes to Loot" call BONYO_fnc_print;
+			sleep 120;
+			if (BONYO_currentMode == "idle" && BONYO_currentRound == _this) then {
+				"You have (3) Minutes Left to Loot" call BONYO_fnc_print;
+				sleep 120;
+				
+				if (BONYO_currentMode == "idle" && BONYO_currentRound == _this) then {
+					"You have (1) Minute Left to Loot" call BONYO_fnc_print;
+					sleep 30;
+					
+					if (BONYO_currentMode == "idle" && BONYO_currentRound == _this) then {
+						"You have (30) Seconds Left to Loot" call BONYO_fnc_print;
+						sleep 30;
+						
+						if (BONYO_currentMode == "idle" && BONYO_currentRound == _this) then {
+							"Looting Period Has Ended" call BONYO_fnc_print;
+							
+							//Clear all corpses, gear piles, and vehicles
+							[getMarkerPos "area_base", 10000] call BONYO_fnc_cleanup;
+						};
+					};
+				};
+			};
+		};
 	
 	//If the round was a failure
 	} else {
