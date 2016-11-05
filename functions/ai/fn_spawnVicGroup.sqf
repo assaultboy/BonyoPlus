@@ -68,6 +68,9 @@ if (_groupProto select 1 select 2 != "") then {
 	_unit moveInCommander _vic;
 };
 
+//Flag the vehicle as an AI vehicle
+_vic setVariable ["BONYO_clearOnCleanup", true];
+
 //Add every unit in the group to the curator list
 {
 	_x addCuratorEditableObjects [units _grp, true];

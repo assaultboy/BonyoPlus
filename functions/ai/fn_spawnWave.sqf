@@ -20,7 +20,7 @@
 if (!isServer) exitWith {true};
 
 //Cleanup the last round
-[getMarkerPos "area_base" ,10000] call BONYO_fnc_clearCorpses;
+[getMarkerPos "area_base" ,10000] call BONYO_fnc_cleanup;
 
 private ["_wave","_playerCount","_maxGroups","_groupCount", "_vicMod"];
 

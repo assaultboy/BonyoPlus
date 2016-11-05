@@ -39,13 +39,13 @@ if (BONYO_currentMode == "activeround") then {
 		//Tell the players
 		["WaveFail", [BONYO_currentRound, BONYO_roundFailRemarks call BIS_fnc_selectRandom]] remoteExec ["BIS_fnc_showNotification", 0];
 		
-		//Clear all corpses
-		[getMarkerPos "area_base", 10000] call BONYO_fnc_clearCorpses;
-		
-		//Clear all enemies
+		//Clear all enemies that are active
 		{
 			deleteVehicle _x;
 		} forEach BONYO_activeEnemyUnitList;
+		
+		//Clear all corpses, gear piles, and vehicles
+		[getMarkerPos "area_base", 10000] call BONYO_fnc_cleanup;
 	};
 	
 	//Sync the servers variables with all the clients

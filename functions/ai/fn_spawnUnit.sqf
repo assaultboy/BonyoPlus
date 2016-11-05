@@ -36,4 +36,7 @@ _unit setRank (_this select 1);
 //Add this unit to our spectator list
 [[_unit],false] remoteExec ["ace_spectator_fnc_updateUnits", 0];
 
+//Make our unit able to be cleaned up
+_unit setVariable ["BONYO_clearOnCleanup", true];
+
 _unit
