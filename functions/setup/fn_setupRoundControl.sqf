@@ -15,6 +15,8 @@
 		_obj call BONYO_fnc_setupRoundControl
 */
 
+_this allowDamage false;
+
 //Add our Wave start option
 _this addAction ["Start Wave", {
 	//Check if every player is within the marker

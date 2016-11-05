@@ -8,7 +8,7 @@ class EditorData
 	toggles=1;
 	class ItemIDProvider
 	{
-		nextID=923;
+		nextID=926;
 	};
 	class MarkerIDProvider
 	{
@@ -16,10 +16,10 @@ class EditorData
 	};
 	class Camera
 	{
-		pos[]={5880.478,146.48811,2588.8091};
-		dir[]={0.49238986,-0.86970747,-0.036099251};
-		up[]={0.86734819,0.49361864,-0.063588858};
-		aside[]={-0.073123083,4.8606307e-007,-0.99738801};
+		pos[]={5472.0127,341.30939,2524.2646};
+		dir[]={0.77440548,-0.599792,-0.2019162};
+		up[]={0.58043611,0.80012107,-0.15134221};
+		aside[]={-0.25232777,-6.3842162e-007,-0.9677484};
 	};
 };
 binarizationWanted=0;
@@ -46,7 +46,9 @@ addons[]=
 	"ace_dragging",
 	"ace_advanced_fatigue",
 	"A3_Structures_F_Households_WIP",
-	"101_editor"
+	"101_editor",
+	"A3_Structures_F_Households_House_Big02",
+	"A3_Structures_F_Households_House_Big01"
 };
 class AddonsMetaData
 {
@@ -1294,7 +1296,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=41;
+		items=43;
 		class Item0
 		{
 			dataType="Group";
@@ -17351,6 +17353,39 @@ class Mission
 			name="ai_spawn_vic_5";
 			type="Empty";
 			id=675;
+		};
+		class Item41
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={5938.1392,69.394043,2594.5256};
+				angles[]={0,2.5571623,0};
+			};
+			side="Empty";
+			flags=5;
+			class Attributes
+			{
+			};
+			id=923;
+			type="Land_d_House_Big_02_V1_F";
+		};
+		class Item42
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={5944.5063,71.863655,2616.1399};
+				angles[]={0,5.7478509,0};
+			};
+			side="Empty";
+			flags=1;
+			class Attributes
+			{
+			};
+			id=925;
+			type="Land_i_House_Big_01_V1_F";
+			atlOffset=1.165802;
 		};
 	};
 };
