@@ -17,6 +17,8 @@ class CfgFunctions
 			class syncVariables {};
 			class requestSync {};
 			class cleanup {};
+			
+			class becomeDog {};
 		};
 		
 		class spectator
