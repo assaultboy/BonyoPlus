@@ -5,7 +5,7 @@ class EditorData
 	angleGridStep=0.2617994;
 	scaleGridStep=1;
 	autoGroupingDist=10;
-	toggles=1;
+	toggles=10;
 	class ItemIDProvider
 	{
 		nextID=926;
@@ -16,10 +16,10 @@ class EditorData
 	};
 	class Camera
 	{
-		pos[]={5952.3955,85.821007,2589.2502};
-		dir[]={-0.41482174,-0.33339763,0.84676188};
-		up[]={-0.14672934,0.94274175,0.29951552};
-		aside[]={0.89812666,-9.2992559e-007,0.43998516};
+		pos[]={5940.6548,81.963387,2604.7578};
+		dir[]={-0.53918695,-0.61661059,0.57385409};
+		up[]={-0.42226976,0.78721523,0.44942105};
+		aside[]={0.72885573,-1.4897669e-006,0.68482614};
 	};
 };
 binarizationWanted=0;
@@ -17162,7 +17162,7 @@ class Mission
 			dataType="Object";
 			class PositionInfo
 			{
-				position[]={5919.4268,72.580002,2610.7839};
+				position[]={5919.4268,71.872589,2610.7839};
 				angles[]={0,2.6560595,0};
 			};
 			side="Empty";
@@ -17173,7 +17173,7 @@ class Mission
 			};
 			id=409;
 			type="Land_Unfinished_Building_02_F";
-			atlOffset=1.0009995;
+			atlOffset=0.29358673;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -17302,7 +17302,7 @@ class Mission
 			dataType="Object";
 			class PositionInfo
 			{
-				position[]={5920.146,72.354828,2599.075};
+				position[]={5920.146,71.647415,2599.075};
 				angles[]={0,4.2506447,0};
 			};
 			side="Empty";
@@ -17313,7 +17313,7 @@ class Mission
 			};
 			id=410;
 			type="Land_Unfinished_Building_01_F";
-			atlOffset=2.2450027;
+			atlOffset=1.53759;
 			class CustomAttributes
 			{
 				class Attribute0
