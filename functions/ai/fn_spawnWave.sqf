@@ -58,7 +58,7 @@ for [{_i=1}, {_i<=_groupCount}, {_i=_i+1}] do {
 
 //Spawn any vehicles
 if ((floor (_wave / _vicMod)) > (floor ((_wave - 1) / _vicMod))) then {
-	for [{_i=1}, {_i<=(floor (_wave / _vicMod))}, {_i=_i+1}] do {
+	for [{_i=1}, {_i<=((floor ((_wave / _vicMod) / 2)) min (_playerCount/2))}, {_i=_i+1}] do {
 		private ["_grp"];
 		
 		_grp = (getMarkerPos (BONYO_enemyVicSpawnList call BIS_fnc_selectRandom)) call BONYO_fnc_spawnVicGroup;
