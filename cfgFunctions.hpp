@@ -56,6 +56,7 @@ class CfgFunctions
 		{
 			class setupRoundControl {};
 			class setupLocker {};
+			class setupATM {};
 			
 			class compileMarkerLists {};
 			class compileRemarks {};

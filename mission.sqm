@@ -5,10 +5,10 @@ class EditorData
 	angleGridStep=0.2617994;
 	scaleGridStep=1;
 	autoGroupingDist=10;
-	toggles=10;
+	toggles=1;
 	class ItemIDProvider
 	{
-		nextID=926;
+		nextID=958;
 	};
 	class MarkerIDProvider
 	{
@@ -16,10 +16,10 @@ class EditorData
 	};
 	class Camera
 	{
-		pos[]={5940.6548,81.963387,2604.7578};
-		dir[]={-0.53918695,-0.61661059,0.57385409};
-		up[]={-0.42226976,0.78721523,0.44942105};
-		aside[]={0.72885573,-1.4897669e-006,0.68482614};
+		pos[]={5927.9644,95.032578,2644.0686};
+		dir[]={0.30921927,-0.63367301,-0.70916343};
+		up[]={0.2532765,0.7735945,-0.58086741};
+		aside[]={-0.91668528,-5.0105155e-007,-0.39970699};
 	};
 };
 binarizationWanted=0;
@@ -44,17 +44,20 @@ addons[]=
 	"A3_3DEN",
 	"A3_Weapons_F_Ammoboxes",
 	"ace_dragging",
-	"ace_advanced_fatigue",
 	"A3_Structures_F_Households_WIP",
 	"101_editor",
 	"A3_Structures_F_Households_House_Big02",
-	"A3_Structures_F_Households_House_Big01"
+	"A3_Structures_F_EPC_Civ_Accessories",
+	"A3_Structures_F_EPB_Civ_Graffiti",
+	"A3_Structures_F_Households_House_Big01",
+	"A3_Structures_F_Civ_Dead",
+	"CUP_CASigns2"
 };
 class AddonsMetaData
 {
 	class List
 	{
-		items=22;
+		items=25;
 		class Item0
 		{
 			className="A3_Characters_F";
@@ -190,22 +193,41 @@ class AddonsMetaData
 		};
 		class Item19
 		{
-			className="ace_advanced_fatigue";
-			name="ACE3 - Advanced Fatigue";
-			author="ACE-Team";
-			url="http://ace3mod.com/";
-		};
-		class Item20
-		{
 			className="A3_Structures_F_Households";
 			name="Arma 3 - Houses";
 			author="Bohemia Interactive";
 			url="http://www.arma3.com";
 		};
-		class Item21
+		class Item20
 		{
 			className="101_editor";
 			name="101_editor";
+		};
+		class Item21
+		{
+			className="A3_Structures_F_EPC";
+			name="Arma 3 Win Episode - Buildings and Structures";
+			author="Bohemia Interactive";
+			url="http://www.arma3.com";
+		};
+		class Item22
+		{
+			className="A3_Structures_F_EPB";
+			name="Arma 3 Adapt Episode - Buildings and Structures";
+			author="Bohemia Interactive";
+			url="http://www.arma3.com";
+		};
+		class Item23
+		{
+			className="A3_Structures_F";
+			name="Arma 3 - Buildings and Structures";
+			author="Bohemia Interactive";
+			url="http://www.arma3.com";
+		};
+		class Item24
+		{
+			className="CUP_CASigns2";
+			name="CUP_CASigns2";
 		};
 	};
 };
@@ -1296,7 +1318,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=43;
+		items=46;
 		class Item0
 		{
 			dataType="Group";
@@ -16597,7 +16619,7 @@ class Mission
 			dataType="Object";
 			class PositionInfo
 			{
-				position[]={5927.4219,69.809715,2615.4888};
+				position[]={5927.2021,70.417427,2608.6753};
 			};
 			side="Empty";
 			flags=5;
@@ -16674,8 +16696,8 @@ class Mission
 			dataType="Object";
 			class PositionInfo
 			{
-				position[]={5926.5508,69.804543,2617.3428};
-				angles[]={6.1848364,4.2557755,6.2086568};
+				position[]={5924.2065,68.312668,2600.8325};
+				angles[]={6.1980586,4.2557755,6.2192731};
 			};
 			side="Empty";
 			flags=4;
@@ -16767,116 +16789,6 @@ class Mission
 			};
 		};
 		class Item21
-		{
-			dataType="Logic";
-			class PositionInfo
-			{
-				position[]={5965,64.423317,2592};
-				angles[]={6.223258,0,6.200706};
-			};
-			id=376;
-			type="ace_advanced_fatigue_moduleSettings";
-			class CustomAttributes
-			{
-				class Attribute0
-				{
-					property="ace_advanced_fatigue_moduleSettings_TerrainGradientFactor";
-					expression="_this setVariable ['TerrainGradientFactor',_value,true];";
-					class Value
-					{
-						class data
-						{
-							class type
-							{
-								type[]=
-								{
-									"SCALAR"
-								};
-							};
-							value=0;
-						};
-					};
-				};
-				class Attribute1
-				{
-					property="ace_advanced_fatigue_moduleSettings_Enabled";
-					expression="_this setVariable ['Enabled',_value,true];";
-					class Value
-					{
-						class data
-						{
-							class type
-							{
-								type[]=
-								{
-									"BOOL"
-								};
-							};
-							value=1;
-						};
-					};
-				};
-				class Attribute2
-				{
-					property="ace_advanced_fatigue_moduleSettings_RecoveryFactor";
-					expression="_this setVariable ['RecoveryFactor',_value,true];";
-					class Value
-					{
-						class data
-						{
-							class type
-							{
-								type[]=
-								{
-									"SCALAR"
-								};
-							};
-							value=9.9999998e+010;
-						};
-					};
-				};
-				class Attribute3
-				{
-					property="ace_advanced_fatigue_moduleSettings_LoadFactor";
-					expression="_this setVariable ['LoadFactor',_value,true];";
-					class Value
-					{
-						class data
-						{
-							class type
-							{
-								type[]=
-								{
-									"SCALAR"
-								};
-							};
-							value=0;
-						};
-					};
-				};
-				class Attribute4
-				{
-					property="ace_advanced_fatigue_moduleSettings_PerformanceFactor";
-					expression="_this setVariable ['PerformanceFactor',_value,true];";
-					class Value
-					{
-						class data
-						{
-							class type
-							{
-								type[]=
-								{
-									"SCALAR"
-								};
-							};
-							value=9.9999998e+010;
-						};
-					};
-				};
-				nAttributes=5;
-			};
-		};
-		class Item22
 		{
 			dataType="Logic";
 			class PositionInfo
@@ -17157,7 +17069,7 @@ class Mission
 				nAttributes=14;
 			};
 		};
-		class Item23
+		class Item22
 		{
 			dataType="Object";
 			class PositionInfo
@@ -17198,7 +17110,7 @@ class Mission
 				nAttributes=1;
 			};
 		};
-		class Item24
+		class Item23
 		{
 			dataType="Marker";
 			position[]={5573.1309,20.953133,2715.7974};
@@ -17207,7 +17119,7 @@ class Mission
 			id=425;
 			atlOffset=-50.119583;
 		};
-		class Item25
+		class Item24
 		{
 			dataType="Marker";
 			position[]={5763.0435,33.439331,2779.3982};
@@ -17216,7 +17128,7 @@ class Mission
 			id=426;
 			atlOffset=-63.913605;
 		};
-		class Item26
+		class Item25
 		{
 			dataType="Marker";
 			position[]={5826.4854,30.019714,2834.3784};
@@ -17225,7 +17137,7 @@ class Mission
 			id=427;
 			atlOffset=-50.312187;
 		};
-		class Item27
+		class Item26
 		{
 			dataType="Marker";
 			position[]={5966.7144,14.52916,2799.3887};
@@ -17234,7 +17146,7 @@ class Mission
 			id=428;
 			atlOffset=-50.325546;
 		};
-		class Item28
+		class Item27
 		{
 			dataType="Marker";
 			position[]={6104.916,-23.797712,2551.9226};
@@ -17243,7 +17155,7 @@ class Mission
 			id=429;
 			atlOffset=-50.181236;
 		};
-		class Item29
+		class Item28
 		{
 			dataType="Marker";
 			position[]={5989.2734,-7.4721146,2387.959};
@@ -17252,7 +17164,7 @@ class Mission
 			id=430;
 			atlOffset=-50.025177;
 		};
-		class Item30
+		class Item29
 		{
 			dataType="Marker";
 			position[]={5811.4106,-9.6494255,2330.4209};
@@ -17261,7 +17173,7 @@ class Mission
 			id=431;
 			atlOffset=-50.082901;
 		};
-		class Item31
+		class Item30
 		{
 			dataType="Marker";
 			position[]={5480.2603,2.459137,2398.4629};
@@ -17270,7 +17182,7 @@ class Mission
 			id=432;
 			atlOffset=-49.931606;
 		};
-		class Item32
+		class Item31
 		{
 			dataType="Marker";
 			position[]={5653.0557,-0.88164902,2281.7432};
@@ -17279,7 +17191,7 @@ class Mission
 			id=433;
 			atlOffset=-49.912804;
 		};
-		class Item33
+		class Item32
 		{
 			dataType="Marker";
 			position[]={5500.4746,11.688114,2545.1743};
@@ -17288,7 +17200,7 @@ class Mission
 			id=434;
 			atlOffset=-50.065571;
 		};
-		class Item34
+		class Item33
 		{
 			dataType="Marker";
 			position[]={5660.8496,40.716011,2773.5479};
@@ -17297,7 +17209,7 @@ class Mission
 			id=435;
 			atlOffset=-49.824043;
 		};
-		class Item35
+		class Item34
 		{
 			dataType="Object";
 			class PositionInfo
@@ -17338,7 +17250,7 @@ class Mission
 				nAttributes=1;
 			};
 		};
-		class Item36
+		class Item35
 		{
 			dataType="Marker";
 			position[]={5730.9204,1.3647392e+016,2936.5515};
@@ -17347,7 +17259,7 @@ class Mission
 			id=671;
 			atlOffset=1.3647392e+016;
 		};
-		class Item37
+		class Item36
 		{
 			dataType="Marker";
 			position[]={5383.0015,61.568645,2705.374};
@@ -17355,7 +17267,7 @@ class Mission
 			type="Empty";
 			id=672;
 		};
-		class Item38
+		class Item37
 		{
 			dataType="Marker";
 			position[]={5519.918,62.410843,2349.386};
@@ -17363,7 +17275,7 @@ class Mission
 			type="Empty";
 			id=673;
 		};
-		class Item39
+		class Item38
 		{
 			dataType="Marker";
 			position[]={5777.791,51.457531,2361.7932};
@@ -17371,7 +17283,7 @@ class Mission
 			type="Empty";
 			id=674;
 		};
-		class Item40
+		class Item39
 		{
 			dataType="Marker";
 			position[]={6182.2471,14.390881,2377.0779};
@@ -17379,7 +17291,7 @@ class Mission
 			type="Empty";
 			id=675;
 		};
-		class Item41
+		class Item40
 		{
 			dataType="Object";
 			class PositionInfo
@@ -17420,23 +17332,22 @@ class Mission
 				nAttributes=1;
 			};
 		};
-		class Item42
+		class Item41
 		{
 			dataType="Object";
 			class PositionInfo
 			{
-				position[]={5944.5059,71.863876,2616.1399};
-				angles[]={0,5.747858,0};
+				position[]={5927.0649,69.267662,2607.6189};
+				angles[]={0,5.7886987,0};
 			};
 			side="Empty";
-			flags=1;
+			flags=5;
 			class Attributes
 			{
-				init="this allowDamage false;";
+				init="this call BONYO_fnc_setupATM";
 			};
-			id=925;
-			type="Land_i_House_Big_01_V1_F";
-			atlOffset=1.1659927;
+			id=934;
+			type="Land_Atm_01_F";
 			class CustomAttributes
 			{
 				class Attribute0
@@ -17460,6 +17371,73 @@ class Mission
 				};
 				nAttributes=1;
 			};
+		};
+		class Item42
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={5926.188,71.23867,2615.8945};
+				angles[]={0,4.2344737,0};
+			};
+			side="Empty";
+			class Attributes
+			{
+			};
+			id=943;
+			type="Land_Graffiti_01_F";
+			atlOffset=1.863945;
+		};
+		class Item43
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={5945.7358,71.253433,2612.6746};
+				angles[]={0,5.8016081,0};
+			};
+			side="Empty";
+			flags=1;
+			class Attributes
+			{
+			};
+			id=955;
+			type="Land_d_House_Big_01_V1_F";
+			atlOffset=1.3306808;
+		};
+		class Item44
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={5953.9419,65.642883,2596.3362};
+				angles[]={6.215291,0,6.2206011};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+				createAsSimpleObject=1;
+			};
+			id=956;
+			type="Land_Grave_soldier_F";
+			atlOffset=0.00061798096;
+		};
+		class Item45
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={5927.3789,77.168854,2613.6665};
+				angles[]={6.2768283,4.2253103,0.0079561593};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+			};
+			id=957;
+			type="Land_Company3_2";
 		};
 	};
 };
