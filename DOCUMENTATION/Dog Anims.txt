@@ -1,0 +1,9 @@
+Barking - "Dog_Idle_Bark"
+Stretch - ""Dog_Idle_01"
+Sniff Ground - "Dog_Idle_09"
+Interest - "Dog_Idle_Growl"
+Sit - "Dog_Idle_Sit01"
+Lick Paw Sit - "Dog_Idle_Sit05"
+
+Various Alts
+Sit - "Dog_Sit"

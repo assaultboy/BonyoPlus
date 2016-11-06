@@ -27,19 +27,20 @@ selectPlayer _dog;
 
 //Set our camera up
 cam = "Land_HandyCam_F" createVehicleLocal [0,0,0];
+
 cam hideObject true;
-cam attachTo [player, [0,0,2]];
-cam setVectorUp [0,0.99,0.01];
+cam attachTo [player, [0,-1,1]];
 cam switchCamera "Internal";
+
 findDisplay 46 displayAddEventHandler ["MouseButtonDown", {
 	if (_this select 1 == 0) then {
-		player forceWeaponFire [currentMuzzle player, currentWeaponMode player];
+		player playMove "Dog_Idle_Bark";
 	};
 	false
 }];
 findDisplay 46 displayAddEventHandler ["KeyDown", {
 	if (_this select 1 in actionKeys "ReloadMagazine") then {
-		reload player;
+		player playMove "Dog_Sit";
 	};
 	false
 }];
@@ -54,6 +55,9 @@ missionNamespace setVariable ["BONYO_actualPlayerInfo", _oldUnit];
 
 //When we die move us back to the actual player and move us to the respawn point
 _dog addEventHandler ["Killed", {
+	findDisplay 46 displayRemoveAllEventHandlers "KeyDown";
+	findDisplay 46 displayRemoveAllEventHandlers "MouseButtonDown";
+	
 	selectPlayer (missionNamespace getVariable ["BONYO_actualPlayerInfo", nil]);
 	player setPos (getMarkerPos "respawn");
 }];
