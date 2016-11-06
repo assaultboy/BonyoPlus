@@ -42,6 +42,7 @@ class CfgFunctions
 			class spawnWave {};
 			
 			class debugGroup {};
+			class assignWaypoint {};
 		};
 		
 		class money

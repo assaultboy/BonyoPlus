@@ -48,7 +48,7 @@ private ["_i"];
 for [{_i=1}, {_i<=_groupCount}, {_i=_i+1}] do {
 	private ["_grp"];
 	_grp = (getMarkerPos (BONYO_enemyInfSpawnList call BIS_fnc_selectRandom)) call BONYO_fnc_spawnInfGroup;
-	_grp addWaypoint [getMarkerPos "respawn", 50];
+	_grp call BONYO_fnc_assignWaypoint;
 	
 	//Add units to the enemy list so we can check if they're all dead
 	{
@@ -62,7 +62,7 @@ if ((floor (_wave / _vicMod)) > (floor ((_wave - 1) / _vicMod))) then {
 		private ["_grp"];
 		
 		_grp = (getMarkerPos (BONYO_enemyVicSpawnList call BIS_fnc_selectRandom)) call BONYO_fnc_spawnVicGroup;
-		_grp addWaypoint [getMarkerPos "respawn", 50];
+		_grp call BONYO_fnc_assignWaypoint;
 		
 		//Add units to the enemy list so we can check if they're all dead
 		{
