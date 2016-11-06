@@ -39,4 +39,7 @@ _unit setRank (_this select 1);
 //Make our unit able to be cleaned up
 _unit setVariable ["BONYO_clearOnCleanup", true];
 
+//Don't be a pussy
+_unit allowFleeing 0;
+
 _unit
