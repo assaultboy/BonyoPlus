@@ -8,7 +8,7 @@ class EditorData
 	toggles=1;
 	class ItemIDProvider
 	{
-		nextID=958;
+		nextID=964;
 	};
 	class MarkerIDProvider
 	{
@@ -16,10 +16,10 @@ class EditorData
 	};
 	class Camera
 	{
-		pos[]={5927.9644,95.032578,2644.0686};
-		dir[]={0.30921927,-0.63367301,-0.70916343};
-		up[]={0.2532765,0.7735945,-0.58086741};
-		aside[]={-0.91668528,-5.0105155e-007,-0.39970699};
+		pos[]={5811.8271,136.49803,2511.4873};
+		dir[]={0.29584473,-0.81879371,0.49199864};
+		up[]={0.421942,0.57408917,0.70170289};
+		aside[]={0.85700107,-2.8871e-007,-0.51532483};
 	};
 };
 binarizationWanted=0;
@@ -50,8 +50,8 @@ addons[]=
 	"A3_Structures_F_EPC_Civ_Accessories",
 	"A3_Structures_F_EPB_Civ_Graffiti",
 	"A3_Structures_F_Households_House_Big01",
-	"A3_Structures_F_Civ_Dead",
-	"CUP_CASigns2"
+	"CUP_CASigns2",
+	"A3_Structures_F_Civ_InfoBoards"
 };
 class AddonsMetaData
 {
@@ -219,15 +219,15 @@ class AddonsMetaData
 		};
 		class Item23
 		{
+			className="CUP_CASigns2";
+			name="CUP_CASigns2";
+		};
+		class Item24
+		{
 			className="A3_Structures_F";
 			name="Arma 3 - Buildings and Structures";
 			author="Bohemia Interactive";
 			url="http://www.arma3.com";
-		};
-		class Item24
-		{
-			className="CUP_CASigns2";
-			name="CUP_CASigns2";
 		};
 	};
 };
@@ -16707,6 +16707,7 @@ class Mission
 			};
 			id=52;
 			type="Box_NATO_AmmoVeh_F";
+			atlOffset=-0.0001373291;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -17176,11 +17177,11 @@ class Mission
 		class Item30
 		{
 			dataType="Marker";
-			position[]={5480.2603,2.459137,2398.4629};
+			position[]={5486.062,10.6875,2387.6873};
 			name="ai_spawn_inf_9";
 			type="Empty";
 			id=432;
-			atlOffset=-49.931606;
+			atlOffset=-42.489101;
 		};
 		class Item31
 		{
@@ -17270,7 +17271,7 @@ class Mission
 		class Item37
 		{
 			dataType="Marker";
-			position[]={5519.918,62.410843,2349.386};
+			position[]={5525.7212,63.352932,2503.5664};
 			name="ai_spawn_vic_3";
 			type="Empty";
 			id=673;
@@ -17410,24 +17411,6 @@ class Mission
 			dataType="Object";
 			class PositionInfo
 			{
-				position[]={5953.9419,65.642883,2596.3362};
-				angles[]={6.215291,0,6.2206011};
-			};
-			side="Empty";
-			flags=4;
-			class Attributes
-			{
-				createAsSimpleObject=1;
-			};
-			id=956;
-			type="Land_Grave_soldier_F";
-			atlOffset=0.00061798096;
-		};
-		class Item45
-		{
-			dataType="Object";
-			class PositionInfo
-			{
 				position[]={5927.3789,77.168854,2613.6665};
 				angles[]={6.2768283,4.2253103,0.0079561593};
 			};
@@ -17438,6 +17421,23 @@ class Mission
 			};
 			id=957;
 			type="Land_Company3_2";
+		};
+		class Item45
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={5929.9839,68.55928,2609.6392};
+				angles[]={6.1940894,4.2388639,6.2166171};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+			};
+			id=963;
+			type="Land_InfoStand_V2_F";
+			atlOffset=-6.1035156e-005;
 		};
 	};
 };
