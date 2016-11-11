@@ -5,21 +5,21 @@ class EditorData
 	angleGridStep=0.2617994;
 	scaleGridStep=1;
 	autoGroupingDist=10;
-	toggles=1;
+	toggles=129;
 	class ItemIDProvider
 	{
-		nextID=964;
+		nextID=975;
 	};
 	class MarkerIDProvider
 	{
-		nextID=15;
+		nextID=16;
 	};
 	class Camera
 	{
-		pos[]={5811.8271,136.49803,2511.4873};
-		dir[]={0.29584473,-0.81879371,0.49199864};
-		up[]={0.421942,0.57408917,0.70170289};
-		aside[]={0.85700107,-2.8871e-007,-0.51532483};
+		pos[]={5912.1782,75.825363,2632.6519};
+		dir[]={0.27145845,-0.79359305,-0.54458249};
+		up[]={0.35405454,0.60839653,-0.71028316};
+		aside[]={-0.89499646,-7.7078585e-007,-0.44613025};
 	};
 };
 binarizationWanted=0;
@@ -49,9 +49,9 @@ addons[]=
 	"A3_Structures_F_Households_House_Big02",
 	"A3_Structures_F_EPC_Civ_Accessories",
 	"A3_Structures_F_EPB_Civ_Graffiti",
-	"A3_Structures_F_Households_House_Big01",
 	"CUP_CASigns2",
-	"A3_Structures_F_Civ_InfoBoards"
+	"A3_Structures_F_Civ_InfoBoards",
+	"A3_Structures_F_Households_House_Big01"
 };
 class AddonsMetaData
 {
@@ -1318,7 +1318,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=46;
+		items=47;
 		class Item0
 		{
 			dataType="Group";
@@ -17394,6 +17394,62 @@ class Mission
 			dataType="Object";
 			class PositionInfo
 			{
+				position[]={5927.3789,77.168854,2613.6665};
+				angles[]={6.2768283,4.2253103,0.0079561593};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+			};
+			id=957;
+			type="Land_Company3_2";
+		};
+		class Item44
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={5929.9834,68.559395,2609.6394};
+				angles[]={6.1940861,4.2388639,6.2166185};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+				init="this call BONYO_fnc_setupFortPurchase";
+			};
+			id=963;
+			type="Land_InfoStand_V2_F";
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="ace_isMedicalFacility";
+					expression="_this setVariable [""ace_medical_isMedicalFacility"",_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"BOOL"
+								};
+							};
+							value=0;
+						};
+					};
+				};
+				nAttributes=1;
+			};
+		};
+		class Item45
+		{
+			dataType="Object";
+			class PositionInfo
+			{
 				position[]={5945.7358,71.253433,2612.6746};
 				angles[]={0,5.8016081,0};
 			};
@@ -17406,38 +17462,14 @@ class Mission
 			type="Land_d_House_Big_01_V1_F";
 			atlOffset=1.3306808;
 		};
-		class Item44
+		class Item46
 		{
-			dataType="Object";
-			class PositionInfo
-			{
-				position[]={5927.3789,77.168854,2613.6665};
-				angles[]={6.2768283,4.2253103,0.0079561593};
-			};
-			side="Empty";
-			flags=4;
-			class Attributes
-			{
-			};
-			id=957;
-			type="Land_Company3_2";
-		};
-		class Item45
-		{
-			dataType="Object";
-			class PositionInfo
-			{
-				position[]={5929.9839,68.55928,2609.6392};
-				angles[]={6.1940894,4.2388639,6.2166171};
-			};
-			side="Empty";
-			flags=4;
-			class Attributes
-			{
-			};
-			id=963;
-			type="Land_InfoStand_V2_F";
-			atlOffset=-6.1035156e-005;
+			dataType="Marker";
+			position[]={5912.3838,1.1536478e-016,2632.072};
+			name="purchase_point";
+			type="Empty";
+			id=974;
+			atlOffset=-71.972984;
 		};
 	};
 };

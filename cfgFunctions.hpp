@@ -50,6 +50,7 @@ class CfgFunctions
 			class sellCargo	{};
 			class giveMoney {};
 			class setMoney {};
+			class purchase {};
 		};
 		
 		class setup
@@ -57,10 +58,18 @@ class CfgFunctions
 			class setupRoundControl {};
 			class setupLocker {};
 			class setupATM {};
+			class setupFortPurchase {};
 			
 			class compileMarkerLists {};
 			class compileRemarks {};
 			class compileFactions {};
+		};
+		
+		class objects
+		{
+			class makeMoveable {};
+			class moveAttachedFort {};
+			class buyFort {};
 		};
 	};
 };
