@@ -23,6 +23,9 @@ if (!hasInterface) exitWith {true};
 //Local Objects Only
 if (!local _this) exitWith {true};
 
+//Disable Collision with the object
+[_this, false] call BONYO_fnc_collision;
+
 //Add the move action to the object
 _nil = _this addAction ["Move",{
 	//Clear our object of actions so it's cleaner for the player to use the menu
@@ -58,7 +61,7 @@ _nil = _this addAction ["Move",{
 		player addAction ["<t color='#FF0000'>--------------------------------</t>", "", nil, 6],
 		
 		player addAction ["Place Object", {
-			private ["_object", "_pos", "_class", "_rot", "_newObject"];
+			private ["_object"];
 			
 			_object = ((player getVariable ["BONYO_currentFortData", [objNull, [0,0,0]]]) select 0);
 			
@@ -67,19 +70,9 @@ _nil = _this addAction ["Move",{
 				player removeAction _x;
 			} forEach (player getVariable ["BONYO_currentFortActions", []]);
 			
-			//Detach our object and save its position, class, and rotation
+			//Detach our object and enable collision
 			detach _object;
-			_pos = getPosATL _object;
-			_class = typeOf _object;
-			_rot = direction _object;
-			
-			//Delete the object because it is just a local placeholder
-			deleteVehicle _object;
-			
-			//Create a new global object and place it where it should be
-			_newObject = (_class createVehicle _pos);
-			_newObject setDir _rot;
-			_newObject setPosATL _pos;
+			[_object, true] call BONYO_fnc_collision;
 			
 			//Set our variables to null n shit
 			player setVariable ["BONYO_currentFortData", [objNull, [0,0,0]]];

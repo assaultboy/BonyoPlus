@@ -70,6 +70,7 @@ class CfgFunctions
 			class makeMoveable {};
 			class moveAttachedFort {};
 			class buyFort {};
+			class collision {};
 		};
 	};
 };

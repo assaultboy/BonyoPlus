@@ -24,13 +24,8 @@ if (!hasInterface) exitWith {true};
 if ((_this select 1) call BONYO_fnc_purchase) then {
 	private ["_placeholder"];
 	
-	_placeholder = ((_this select 0) createVehicleLocal (getMarkerPos "purchase_point"));
+	_placeholder = ((_this select 0) createVehicle (getMarkerPos "purchase_point"));
 	_placeHolder call BONYO_fnc_makeMoveable;
-	
-	_placeholder setObjectTexture [0,'#(argb,8,8,3)color(0,1,0,1)'];
-	_placeholder setObjectTexture [1,'#(argb,8,8,3)color(0,1,0,1)'];
-	_placeholder setObjectTexture [2,'#(argb,8,8,3)color(0,1,0,1)'];
-	_placeholder setObjectTexture [3,'#(argb,8,8,3)color(0,1,0,1)'];
 	
 	hint "Fortification Purchased!";
 
