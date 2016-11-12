@@ -33,6 +33,8 @@ clearWeaponCargo _box;
 clearMagazineCargo _box;
 clearBackpackCargo _box;
 
+_box setVariable ["BONYO_clearOnCleanup", false];
+
 //Force the player to open it
 player action ["gear", _box];
 
