@@ -41,6 +41,8 @@ class CfgFunctions
 			class spawnUnit {};
 			class spawnWave {};
 			
+			class spawnTrackers {};
+			
 			class debugGroup {};
 			class assignWaypoint {};
 		};

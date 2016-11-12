@@ -44,27 +44,14 @@ _this addAction ["Start Wave", {
 	};
 }, nil, 6, false, true, "", "BONYO_currentMode == 'idle'"];
 
-/*
 //Add our tracker action
-_this addAction ["Spawn Trackers (pls no spam)", {
-	hint "Trackers Spawned";
-	
-	{
-		private ["_flare","_smoke"];
+_this addAction ["Spawn Trackers $25", {
+	if (25 call BONYO_fnc_purchase) then {
+		[] remoteExec ["BONYO_fnc_spawnTrackers", 2];
 		
-		_flare = "F_40mm_Red" createVehicle [0,0,500];
-		_smoke = "SmokeShellRed" createVehicle [0,0,500];
+		hint "Trackers Purchased!";
 		
-		_flare attachTo [_x, [0,0,50]];
-		_smoke attachTo [_x, [0,0,50]];
-		
-		[_flare,_smoke] spawn {
-			sleep 20;
-			
-			{
-				deleteVehicle _x;
-			} forEach _this;
-		};
-	} forEach BONYO_activeEnemyUnitList;
+	} else {
+		hint "You can't afford this!";
+	};
 }, nil, 6, false, true, "", "BONYO_currentMode == 'activeround'"];
-*/
