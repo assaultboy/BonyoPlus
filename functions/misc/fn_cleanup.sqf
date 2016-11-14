@@ -32,8 +32,8 @@ if !isServer exitWith {true};
 		deleteVehicle _x;
 	} else {
 		//If it's a weapon pile that isn't in the donation area, delete it
-		if (_x isKindof "WeaponHolder" || _x isKindof "WeaponHolderSimulated") then {
-			if (!(_x getVariable ["BONYO_clearOnCleanup",true])) then {
+		if (_x isKindof "GroundWeaponHolder" || _x isKindof "WeaponHolderSimulated") then {
+			if (_x getVariable ["BONYO_clearOnCleanup",true]) then {
 				deleteVehicle _x;
 			};
 		};
