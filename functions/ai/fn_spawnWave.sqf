@@ -6,7 +6,7 @@
 		This function must be called on the server
 		
 	PARAMETERS:
-		Wave Number (DEFAULT: BONYO_currentRound)
+		Wave Number (DEFAULT: Current Round)
 			The wave number to spawn a wave for
 			
 	RETURNS
@@ -27,7 +27,7 @@ private ["_wave","_playerCount","_maxGroups","_groupCount", "_vicMod"];
 _wave = _this;
 
 if (isNil "_wave") then {
-	_wave = BONYO_currentRound;
+	_wave = ([] call BONYO_fnc_getRound);
 };
 
 _playerCount = count allPlayers;

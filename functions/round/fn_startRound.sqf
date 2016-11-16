@@ -19,18 +19,15 @@
 if (!isServer) exitWith {true};
 
 //Now round is active
-if (BONYO_currentMode == "idle") then {
+if (([] call BONYO_fnc_getMode) == "idle") then {
 	//Set our Mode
-	BONYO_currentMode = "activeround";
+	"activeround" call BONYO_fnc_setMode;
 	
 	//Spawn our Wave
-	BONYO_currentRound call BONYO_fnc_spawnWave;
+	([] call BONYO_fnc_getRound) call BONYO_fnc_spawnWave;
 	
 	//Send our notification
-	["WaveStart", [BONYO_currentRound]] remoteExec ["BIS_fnc_showNotification", 0];
-	
-	//Sync dat shit
-	[] call BONYO_fnc_syncVariables;
+	["WaveStart", [[] call BONYO_fnc_getRound]] remoteExec ["BIS_fnc_showNotification", 0];
 	
 //A round is already active
 } else {

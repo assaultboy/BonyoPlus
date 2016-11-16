@@ -14,9 +14,10 @@ class CfgFunctions
 		class misc
 		{
 			class print {};
-			class syncVariables {};
-			class requestSync {};
 			class cleanup {};
+			
+			class setMode {};
+			class getMode {};
 			
 			class becomeDog {};
 		};
@@ -31,6 +32,8 @@ class CfgFunctions
 		{
 			class startRound {};
 			class endRound {};
+			class setRound {};
+			class getRound {};
 		};
 		
 		class ai

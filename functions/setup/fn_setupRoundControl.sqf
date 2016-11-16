@@ -32,20 +32,14 @@ _this addAction ["Start Wave", {
 	
 	//If every player is in the marker
 	if (_allIn) then {
-		//Set our mode so that we cant spam the action
-		//We wrap it in the isServer check for when we are in the editor
-		if (!isServer) then {
-			BONYO_currentMode = "transition";
-		};
-		
 		[] remoteExecCall ["BONYO_fnc_startRound", 2];
 	} else {
 		hint "All players must be in the play area to start a round!";
 	};
-}, nil, 6, false, true, "", "BONYO_currentMode == 'idle'"];
+}, nil, 6, false, true, "", "([] call BONYO_fnc_getMode) == 'idle'"];
 
 //Add our tracker action
-_this addAction ["Spawn Trackers $25", {
+_this addAction ["Purchase Trackers $25", {
 	if (25 call BONYO_fnc_purchase) then {
 		[] remoteExec ["BONYO_fnc_spawnTrackers", 2];
 		
@@ -54,4 +48,4 @@ _this addAction ["Spawn Trackers $25", {
 	} else {
 		hint "You can't afford this!";
 	};
-}, nil, 6, false, true, "", "BONYO_currentMode == 'activeround'"];
+}, nil, 6, false, true, "", "([] call BONYO_fnc_getMode) == 'activeround'"];

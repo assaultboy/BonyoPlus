@@ -3,17 +3,25 @@
 //Fuck you VCOM
 Vcom_ActivateAI = false;
 
-//---------------------------------------------------------------------------------------------------------
-//These variables are only here so the client can read them, they should not be set by the client----------
-//This is the round that will be started when the button is pressed
-BONYO_currentRound = 1;
+/*---------------------------------------------------------------------------------------------------------
+These variables are stored in the missionNamespace and are annotated here for reference
 
-//This is set to the current Mode
-BONYO_currentMode = "idle";
-//----------------------------------------------------------------------------------------------------------
+BONYO_currentRound
+	This is a integer representing the current round, it should default to -1
+	
+BONYO_currentMode
+	This a string to represent the current round, below are the values
+		none - This should be the default value
+		idle - Inbetween rounds
+		activeround - During a round when enemies are still alive and present
+----------------------------------------------------------------------------------------------------------*/
 
 
 if (isServer) then {
+	//Set our variables because we aren't a peasent client
+	"idle" call BONYO_fnc_setMode;
+	1 call BONYO_fnc_setRound;
+	
 	BONYO_activeEnemyUnitList = [];
 	
 	BONYO_enemyInfSpawnList = [];
