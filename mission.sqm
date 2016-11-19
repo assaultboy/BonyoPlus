@@ -5,10 +5,10 @@ class EditorData
 	angleGridStep=0.2617994;
 	scaleGridStep=1;
 	autoGroupingDist=10;
-	toggles=5;
+	toggles=6;
 	class ItemIDProvider
 	{
-		nextID=976;
+		nextID=986;
 	};
 	class MarkerIDProvider
 	{
@@ -16,10 +16,10 @@ class EditorData
 	};
 	class Camera
 	{
-		pos[]={5918.8784,90.21489,2572.2566};
-		dir[]={0.23766929,-0.57944822,0.77963191};
-		up[]={0.16899718,0.81493002,0.55436891};
-		aside[]={0.95657432,-4.634494e-007,-0.29161069};
+		pos[]={5912.1895,79.710403,2623.9512};
+		dir[]={-0.79594713,-0.55329132,-0.24563988};
+		up[]={-0.52868521,0.83298934,-0.16315912};
+		aside[]={-0.29489005,-4.4703484e-008,0.95553219};
 	};
 };
 binarizationWanted=0;
@@ -242,9 +242,6 @@ class AddonsMetaData
 randomSeed=9387857;
 class ScenarioData
 {
-	author="J.Romano";
-	overviewText="Defend your area from wave after wave of enemies.";
-	onLoadMission="Sustain that looting habit.";
 	briefing=0;
 	debriefing=0;
 	saving=0;
@@ -979,7 +976,7 @@ class CustomAttributes
 							"SCALAR"
 						};
 					};
-					value=-1;
+					value=5;
 				};
 			};
 		};
@@ -1300,7 +1297,6 @@ class Mission
 {
 	class Intel
 	{
-		briefingName="Bonyo+ Chernarus";
 		overviewText="Fend of waves of enemies in order to sustain you looting habits.";
 		resistanceWest=0;
 		resistanceEast=1;
@@ -1320,9 +1316,166 @@ class Mission
 		month=10;
 		day=11;
 		hour=9;
-		minute=20;
+		minute=0;
 		startFogDecay=0.014;
 		forecastFogDecay=0.014;
+		class CustomAttributes
+		{
+			name="Intel";
+			class Attribute0
+			{
+				property="Enh_rainbowStrength";
+				expression="0 setRainBow _value";
+				class Value
+				{
+					class data
+					{
+						class type
+						{
+							type[]=
+							{
+								"SCALAR"
+							};
+						};
+						value=0.34999999;
+					};
+				};
+			};
+			class Attribute1
+			{
+				property="Enh_disableGrass";
+				expression="if(_value) then {50 remoteExec ['setTerrainGrid',[0,-2] select (isMultiplayer && isDedicated),true]}";
+				class Value
+				{
+					class data
+					{
+						class type
+						{
+							type[]=
+							{
+								"BOOL"
+							};
+						};
+						value=0;
+					};
+				};
+			};
+			class Attribute2
+			{
+				property="Enh_viewDistance";
+				expression="if (!is3DEN && (_value > 0)) then {_value remoteExec ['setViewDistance',[0,-2] select (isMultiplayer && isDedicated),true]}";
+				class Value
+				{
+					class data
+					{
+						class type
+						{
+							type[]=
+							{
+								"SCALAR"
+							};
+						};
+						value=-1;
+					};
+				};
+			};
+			class Attribute3
+			{
+				property="Enh_fogDecay";
+				expression="missionNamespace setVariable ['Enh_fogDecay',_value]";
+				class Value
+				{
+					class data
+					{
+						class type
+						{
+							type[]=
+							{
+								"SCALAR"
+							};
+						};
+						value=0;
+					};
+				};
+			};
+			class Attribute4
+			{
+				property="Enh_fogValue";
+				expression="				if (_value > 0) then				{					_value spawn					{						waitUntil {time > 0.2};						0 setFog [_this,missionNamespace getVariable 'Enh_fogDecay',missionNamespace getVariable 'Enh_fogBase'];					};				};			";
+				class Value
+				{
+					class data
+					{
+						class type
+						{
+							type[]=
+							{
+								"SCALAR"
+							};
+						};
+						value=0;
+					};
+				};
+			};
+			class Attribute5
+			{
+				property="Enh_fogBase";
+				expression="missionNamespace setVariable ['Enh_fogBase',_value]";
+				class Value
+				{
+					class data
+					{
+						class type
+						{
+							type[]=
+							{
+								"STRING"
+							};
+						};
+						value="0";
+					};
+				};
+			};
+			class Attribute6
+			{
+				property="Enh_timeMultiplier";
+				expression="if (!is3DEN) then {setTimeMultiplier _value}";
+				class Value
+				{
+					class data
+					{
+						class type
+						{
+							type[]=
+							{
+								"SCALAR"
+							};
+						};
+						value=1;
+					};
+				};
+			};
+			class Attribute7
+			{
+				property="Enh_enableEnvironment";
+				expression="if (!is3DEN) then {enableEnvironment _value};";
+				class Value
+				{
+					class data
+					{
+						class type
+						{
+							type[]=
+							{
+								"BOOL"
+							};
+						};
+						value=1;
+					};
+				};
+			};
+			nAttributes=8;
+		};
 	};
 	class Entities
 	{
