@@ -26,3 +26,9 @@ _this addAction ["Buy Sandbag Wall (Tiny) $10", {["Land_BagFence_End_F", 10] cal
 _this addAction ["Buy H-Barrier $50", {["Land_HBarrier_3_F", 50] call BONYO_fnc_buyFort}, nil, 6, false, true];
 _this addAction ["Buy H-Barrier (Single) $20", {["Land_HBarrier_1_F", 20] call BONYO_fnc_buyFort}, nil, 6, false, true];
 _this addAction ["Buy Ramp $5", {["Land_Obstacle_Ramp_F", 5] call BONYO_fnc_buyFort}, nil, 6, false, true];
+
+_this addAction ["<t color='#FF0000'>--Lights--------------------------------------</t>", "", nil, 6, false, true];
+
+_this addAction ["Buy Camping Light $15", {["Land_Camping_Light_F", 15] call BONYO_fnc_buyFort}, nil, 6, false, true];
+_this addAction ["Buy Single Flood Light $25", {["Land_PortableLight_single_F", 25] call BONYO_fnc_buyFort}, nil, 6, false, true];
+_this addAction ["Buy Double Flood Light $35", {["Land_PortableLight_double_F", 35] call BONYO_fnc_buyFort}, nil, 6, false, true];
