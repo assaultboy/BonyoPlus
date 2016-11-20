@@ -28,6 +28,7 @@ _box hideObject true;
 //Attach it to the player
 _box attachTo [player, [0,0,0]];
 
+//We can't use our clearCargo function because the box is local
 clearItemCargo _box;
 clearWeaponCargo _box;
 clearMagazineCargo _box;

@@ -25,10 +25,7 @@ _contents = (_this select 1);
 
 _bagStore = [];
 
-clearItemCargo _box;
-clearWeaponCargo _box;
-clearMagazineCargo _box;
-clearBackpackCargo _box;
+_box call BONYO_fnc_clearCargo;
 
 {
 	_box addItemCargoGlobal [_x, 1];
@@ -51,10 +48,7 @@ clearBackpackCargo _box;
 {
 	private ["_index"];
 	
-	clearItemCargo _x;
-	clearWeaponCargo _x;
-	clearMagazineCargo _x;
-	clearBackpackCargo _x;
+	_x call BONYO_fnc_clearCargo;
 	
 	_index = _bagStore find (typeOf _x);
 	

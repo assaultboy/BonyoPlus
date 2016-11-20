@@ -28,10 +28,7 @@ if ((_this select 1) call BONYO_fnc_purchase) then {
 	_object call BONYO_fnc_makeMoveable;
 	
 	//Clear the cargo of the object
-	clearItemCargo _object;
-	clearWeaponCargo _object;
-	clearMagazineCargo _object;
-	clearBackpackCargo _object;
+	_object call BONYO_fnc_clearCargo;
 	
 	hint "Fortification Purchased!";
 

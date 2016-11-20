@@ -7,6 +7,7 @@ class CfgFunctions
 			class setPlayerSpawnGear {};
 			class getCargo {};
 			class setCargo {};
+			class clearCargo {};
 			class resetLocker {};
 			class openLocalContainer {};
 		};
