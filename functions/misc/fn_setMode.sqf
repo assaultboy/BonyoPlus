@@ -16,7 +16,7 @@
 		"idle" call BONYO_fnc_setMode;
 */
 
-//Only for the clients
-if (!hasInterface) exitWith {true};
+//Only for the Server
+if (!isServer) exitWith {true};
 
 missionNamespace setVariable ["BONYO_currentMode", _this, true];
