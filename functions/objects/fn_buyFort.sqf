@@ -22,10 +22,16 @@
 if (!hasInterface) exitWith {true};
 
 if ((_this select 1) call BONYO_fnc_purchase) then {
-	private ["_placeholder"];
+	private ["_object"];
 	
-	_placeholder = ((_this select 0) createVehicle (getMarkerPos "purchase_point"));
-	_placeHolder call BONYO_fnc_makeMoveable;
+	_object = ((_this select 0) createVehicle (getMarkerPos "purchase_point"));
+	_object call BONYO_fnc_makeMoveable;
+	
+	//Clear the cargo of the object
+	clearItemCargo _object;
+	clearWeaponCargo _object;
+	clearMagazineCargo _object;
+	clearBackpackCargo _object;
 	
 	hint "Fortification Purchased!";
 
