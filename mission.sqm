@@ -5,7 +5,7 @@ class EditorData
 	angleGridStep=0.2617994;
 	scaleGridStep=1;
 	autoGroupingDist=10;
-	toggles=1;
+	toggles=129;
 	class ItemIDProvider
 	{
 		nextID=1009;
@@ -16,10 +16,10 @@ class EditorData
 	};
 	class Camera
 	{
-		pos[]={5933.3306,91.399399,2590.0156};
-		dir[]={-0.048568469,-0.79653627,0.60272592};
-		up[]={-0.063981175,0.60454971,0.79398543};
-		aside[]={0.99681807,2.5826739e-007,0.080324858};
+		pos[]={5965.3882,93.38446,2569.8782};
+		dir[]={-0.05847279,-0.79660404,0.60175842};
+		up[]={-0.077046253,0.60445803,0.79289323};
+		aside[]={0.99536294,1.238659e-007,0.096719548};
 	};
 };
 binarizationWanted=0;
@@ -16956,7 +16956,7 @@ class Mission
 			class PositionInfo
 			{
 				position[]={5966,64.861298,2600};
-				angles[]={6.2139621,0,6.2046809};
+				angles[]={6.2139654,0,6.2046804};
 			};
 			id=377;
 			type="ACE_moduleMedicalSettings";
@@ -16977,7 +16977,7 @@ class Mission
 									"SCALAR"
 								};
 							};
-							value=1800;
+							value=300;
 						};
 					};
 				};
