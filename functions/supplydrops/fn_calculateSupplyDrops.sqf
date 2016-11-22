@@ -42,4 +42,7 @@ if (count _eligablePlayers > 0) then {
 	
 	//Give him a supply drop
 	[position _chosen, _chosen] call BONYO_fnc_spawnSupplyDrop;
+	
+	//Reset his round count
+	_chosen setVariable ["BONYO_roundCount", 0];
 };
