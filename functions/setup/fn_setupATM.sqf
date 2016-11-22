@@ -28,6 +28,9 @@ _this addAction ["Sell Items", {
 	
 	_box = ([] call BONYO_fnc_openLocalContainer);
 	
+	//Remove the default event handler so we can add our own
+	_box removeAllEventHandlers "ContainerClosed";
+	
 	//When we close it we are going to get its contents and return the amount it's worth
 	_box addeventHandler ["ContainerClosed", {
 		(_this select 0) call BONYO_fnc_sellCargo;

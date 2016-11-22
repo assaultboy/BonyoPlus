@@ -28,6 +28,9 @@ _this addEventHandler ["ContainerOpened", {
 	//Populate it with our personal locker
 	[_box, profileNamespace getVariable ["BONYOPLUS_locker", [[], [], [], []]]] call BONYO_fnc_setCargo;
 	
+	//Remove our default event handler so we can use our own
+	_box removeAllEventHandlers "ContainerClosed";
+	
 	//When we close it we are going to save its contents and delete it
 	_box addeventHandler ["ContainerClosed", {
 		profileNameSpace setvariable ["BONYOPLUS_locker", (_this select 0) call BONYO_fnc_getCargo];

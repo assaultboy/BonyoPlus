@@ -36,6 +36,11 @@ clearBackpackCargo _box;
 
 _box setVariable ["BONYO_clearOnCleanup", false];
 
+//Add our event handler so it deletes automatically
+_box addeventHandler ["ContainerClosed", {
+	deleteVehicle (_this select 0);
+}];
+
 //Force the player to open it
 player action ["gear", _box];
 
