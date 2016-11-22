@@ -78,5 +78,13 @@ class CfgFunctions
 			class buyFort {};
 			class collision {};
 		};
+		
+		class supplydrops
+		{
+			class spawnSupplyDrop {};
+			class addSupplyDropAction {};
+			class spawnSupplyDropReward {}
+			class calculateSupplyDrops {};
+		};
 	};
 };

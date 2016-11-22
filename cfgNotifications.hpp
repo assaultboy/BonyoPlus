@@ -34,4 +34,13 @@ class CfgNotifications
 		color[] = {1,1,1,1};
 		priority = 10;
 	};
+	
+	class SupplyDrop
+	{
+		title = "SUPPLY DROP";
+		iconPicture = "\A3\ui_f\data\map\mapcontrol\taskIcon_ca.paa";
+		description = "<t size='0.75'>%1</t>";
+		color[] = {1,1,1,1};
+		priority = 10;
+	};
 };

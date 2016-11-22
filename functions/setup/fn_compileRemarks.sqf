@@ -30,3 +30,12 @@ BONYO_roundFailRemarks = ["You suck",
 "Have you considered quitting?",
 "You're supposed to win",
 "How quickly the tides turn"];
+
+BONYO_supplyDropRemarks = ["Delivery for %1",
+"Supply Drop for %1",
+"Someone Loves %1",
+"Santa has a present for %1",
+"Care Package for %1",
+"Have a gift, %1",
+"It's bonus season! At least for %1",
+"Eyes to the sky, %1"]

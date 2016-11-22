@@ -42,4 +42,4 @@ _unit setVariable ["BONYO_clearOnCleanup", true];
 //Don't be a pussy
 _unit allowFleeing 0;
 
-_unit
+_unit;

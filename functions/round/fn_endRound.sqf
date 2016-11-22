@@ -30,9 +30,14 @@ if (([] call BONYO_fnc_getMode) == "activeround") then {
 	
 	//If the round was successful
 	if (_this) then {
+		//Show our notification
 		["WaveComplete", [[] call BONYO_fnc_getRound, BONYO_roundCompleteRemarks call BIS_fnc_selectRandom]] remoteExec ["BIS_fnc_showNotification", 0];
 		
+		//Set our new round
 		(([] call BONYO_fnc_getRound) + 1) call BONYO_fnc_setRound;
+		
+		//Calculate our supply drop chances and hand it out as needed
+		[] call BONYO_fnc_calculateSupplyDrops;
 		
 		//Start the loot countdown
 		([] call BONYO_fnc_getRound) spawn {
