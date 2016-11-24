@@ -28,12 +28,7 @@ _amount = (_this select 0);
 _showHint = (_this select 1);
 
 //Get our balance
-_personalBalance = (profileNamespace getVariable ["BONYOPLUS_points",0]);
-_personalBalance = _personalBalance + _amount;
-
-//Set the variable
-profileNamespace setVariable ["BONYOPLUS_points",_personalBalance];
-saveProfileNamespace;
+["points", _amount] call BONYO_fnc_addStat;
 
 //Show our hint if we want
 if (_showHint) then {

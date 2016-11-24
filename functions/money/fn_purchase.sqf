@@ -23,12 +23,12 @@ if (!hasInterface) exitWith {true};
 private ["_balance", "_ret"];
 
 //Retrieve our balance and determine if we have enough
-_balance = profileNamespace getVariable ["BONYOPLUS_points", 0];
+_balance = ("points" call BONYO_fnc_loadStat);
 
 if (_balance >= _this) then {
 	_ret = true;
 	
-	profileNamespace setVariable ["BONYOPLUS_points", _balance - _this];
+	["points", 0-(_this)] call BONYO_fnc_addStat;
 } else {
 	_ret = false;
 };

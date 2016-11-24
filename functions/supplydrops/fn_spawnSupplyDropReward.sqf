@@ -20,6 +20,8 @@ if (!hasInterface) exitWith {true};
 
 private ["_rewards","_local_createBox"];
 
+["lifetimeSupplyDrops", 1] call BONYO_fnc_addStat;
+
 //We define our own function to make life easier and get out of a schedualed environment bug
 _local_createBox = {
 	private ["_box"];

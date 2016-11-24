@@ -28,8 +28,7 @@ _amount = (_this select 0);
 _showHint = (_this select 1);
 
 //Set the variable
-profileNamespace setVariable ["BONYOPLUS_points",_amount];
-saveProfileNamespace;
+["points", _amount] call BONYO_fnc_saveStat;
 
 //Show our hint if we want
 if (_showHint) then {

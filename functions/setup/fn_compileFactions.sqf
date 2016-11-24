@@ -18,6 +18,9 @@
 //Server only
 if (!isServer) exitWith {true};
 
+BONYO_enemyInfFactionList = [];
+BONYO_enemyVicFactionList = [];
+
 //Infantry Faction List
 {
 	BONYO_enemyInfFactionList pushBack (compile (preprocessFileLineNumbers (format ["functions\ai\infFactions\%1.sqf", _x])));

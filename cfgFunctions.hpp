@@ -69,6 +69,7 @@ class CfgFunctions
 			class compileMarkerLists {};
 			class compileRemarks {};
 			class compileFactions {};
+			class compileStats {};
 		};
 		
 		class objects
@@ -85,6 +86,16 @@ class CfgFunctions
 			class addSupplyDropAction {};
 			class spawnSupplyDropReward {}
 			class calculateSupplyDrops {};
+		};
+		
+		class stats
+		{
+			class loadStat {};
+			class saveStat {};
+			
+			class addStat {};
+			
+			class handleRoundEndStats {};
 		};
 	};
 };

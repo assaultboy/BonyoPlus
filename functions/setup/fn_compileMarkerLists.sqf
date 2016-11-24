@@ -17,6 +17,9 @@
 
 if (!isServer) exitWith {true};
 
+BONYO_enemyInfSpawnList = [];
+BONYO_enemyVicSpawnList = [];
+
 {
 	private ["_markerName"];
 	

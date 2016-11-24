@@ -1,7 +1,7 @@
 //Let's initialize some variables
 
 //This will track our current version for saving
-BONYO_var_Version = "0.11";
+BONYO_var_Version = 0.12;
 
 //Fuck you VCOM
 Vcom_ActivateAI = false;
@@ -19,6 +19,7 @@ BONYO_currentMode
 		activeround - During a round when enemies are still alive and present
 ----------------------------------------------------------------------------------------------------------*/
 
+[] call BONYO_fnc_compileStats;
 
 if (isServer) then {
 	//Set our variables because we aren't a peasent client
@@ -27,15 +28,34 @@ if (isServer) then {
 	
 	BONYO_activeEnemyUnitList = [];
 	
-	BONYO_enemyInfSpawnList = [];
-	BONYO_enemyVicSpawnList = [];
 	[] call BONYO_fnc_compileMarkerLists;
-	
-	BONYO_roundCompleteRemarks = [];
-	BONYO_roundFailRemarks = [];
+
 	[] call BONYO_fnc_compileRemarks;
 	
-	BONYO_enemyInfFactionList = [];
-	BONYO_enemyVicFactionList = [];
 	[] call BONYO_fnc_compileFactions;
+};
+
+if (hasInterface) then {
+	//Check for current version
+	private ["_versions"];
+	
+	_versions = ("versions" call BONYO_fnc_loadStat);
+	
+	//IF no version is found set both earliest and current
+	if (typeName _versions == "SCALAR") then {
+		_versions = [BONYO_var_Version, BONYO_var_Version];
+	};
+	
+	["versions", [_versions select 0, BONYO_var_Version]] call BONYO_fnc_saveStat;
+	
+	//Check for the old points
+	private ["_balance"];
+	
+	//Check if the old balance has not been set
+	_balance = profileNamespace getVariable ["BONYOPLUS_points", -1];
+	
+	if (_balance != -1) then {
+		["points", _balance] call BONYO_fnc_saveStat;
+		profileNamespace setVariable ["BONYOPLUS_points", nil];
+	};
 };

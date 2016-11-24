@@ -80,6 +80,9 @@ if (([] call BONYO_fnc_getMode) == "activeround") then {
 		[getMarkerPos "area_base", 10000] call BONYO_fnc_cleanup;
 	};
 	
+	//Call our stats handler on every client
+	[[] call BONYO_fnc_getRound, _this] remoteExec ["BONYO_fnc_handleRoundEndStats", 0];
+	
 //A round is already active
 } else {
 	"Warning! Can only end round during mode 'activeround'" call BONYO_fnc_print;
