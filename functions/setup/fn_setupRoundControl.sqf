@@ -34,6 +34,22 @@ _this addAction ["<t color='#ff0000'>What's New?</t>", {
 	}];
 }, nil, 6, false, true, "", "([] call BONYO_fnc_getMode) == 'idle'"];
 
+//Add our Stats Action
+_this addAction ["<t color='#00ff00'>Show me Stats</t>", {
+	"Stats" hintC [
+		parseText format ["Earliest Version played: V%1", (["versions", [0,0]] call BONYO_fnc_loadStat) select 0],
+		parseText format ["Number of Rounds Completed: %1    Failed: %2", ["lifetimeRoundCompletes", 0] call BONYO_fnc_loadStat, ["lifetimeRoundFails", 0] call BONYO_fnc_loadStat],
+		parseText format ["Supply Drops opened: %1", ["lifetimeSupplyDrops", 0] call BONYO_fnc_loadStat]
+	];
+	
+	hintC_arr_EH = findDisplay 72 displayAddEventHandler ["unload", {
+		0 = _this spawn {
+			_this select 0 displayRemoveEventHandler ["unload", hintC_arr_EH];
+			hintSilent "";
+		};
+	}];
+}, nil, 6, false, true, "", "([] call BONYO_fnc_getMode) == 'idle'"];
+
 //Add our Wave start option
 _this addAction ["Start Wave", {
 	//Check if every player is within the marker
