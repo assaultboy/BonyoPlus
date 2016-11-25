@@ -23,7 +23,7 @@ if (!hasInterface) exitWith {true};
 private ["_balance", "_ret"];
 
 //Retrieve our balance and determine if we have enough
-_balance = ("points" call BONYO_fnc_loadStat);
+_balance = (["points", 0] call BONYO_fnc_loadStat);
 
 if (_balance >= _this) then {
 	_ret = true;

@@ -9,6 +9,9 @@
 		StatName
 			A string that refers to the current stat being loaded
 			
+		Default
+			The default value to return if no value is found
+			
 	RETURNS
 		Value
 			The value of the given stat, defaults to -1
@@ -24,7 +27,7 @@ private ["_stats", "_index", "_return"];
 
 //Load our stats and retrieve our index
 _stats = profileNamespace getVariable ["BONYO_stats", []];
-_index = (BONYO_statsArray find _this);
+_index = (BONYO_statsArray find (_this select 0));
 
 _stats resize (count BONYO_statsArray);
 
@@ -41,7 +44,7 @@ if (_index == -1) then {
 
 //Our default case
 if (isNil "_return") then {
-	_return = -1;
+	_return = (_this select 1);
 };
 
 _return;

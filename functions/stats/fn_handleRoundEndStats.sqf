@@ -27,7 +27,7 @@ if (_this select 1) then {
 	["lifetimeRoundCompletes", 1] call BONYO_fnc_addStat;
 	
 	//If we beat the current record then set it
-	if (("highestRound" call BONYO_fnc_loadStat) < (_this select 0)) then {
+	if ([("highestRound", 0] call BONYO_fnc_loadStat) < (_this select 0)) then {
 		["highestRound", _this select 0] call BONYO_fnc_saveStat;
 	};
 } else {

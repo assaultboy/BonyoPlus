@@ -23,10 +23,6 @@ if (!hasInterface) exitWith {true};
 
 private ["_stat"];
 
-_stat = ((_this select 0) call BONYO_fnc_loadStat);
-
-if (_stat == -1) then {
-	_stat = 0;
-};
+_stat = ([(_this select 0), 0] call BONYO_fnc_loadStat);
 
 [_this select 0, (_this select 1) + _stat] call BONYO_fnc_saveStat;
