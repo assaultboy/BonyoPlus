@@ -23,7 +23,7 @@ _this allowDamage false;
 _this addAction ["<t color='#ff0000'>What's New?</t>", {
 	"What's New" hintC [
 		parseText "Clink the link below to open a webpage with the latest release notes",
-		parseText format ["<a underline='true' color='#9b9bff' href='https://github.com/assaultboy/BonyoPlus/releases/V%1'>Update&#160;Log&#160;Link</a>", BONYO_var_Version]
+		parseText "<a underline='true' color='#9b9bff' href='https://github.com/assaultboy/BonyoPlus/releases'>Update&#160;Log&#160;Link</a>"
 	];
 	
 	hintC_arr_EH = findDisplay 72 displayAddEventHandler ["unload", {
