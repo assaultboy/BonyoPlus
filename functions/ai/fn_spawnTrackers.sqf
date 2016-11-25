@@ -19,26 +19,25 @@
 if (!isServer) exitWith {true};
 
 {
-	private ["_flare","_smoke"];
-	
-	//Spawn Red if the enemy is alive, green if they are dead
+	//ONly track living enemies
 	if (alive _x) then {
+		private ["_flare","_smoke"];
+		
+		//Spawn our flare and smoke
 		_flare = ("F_40mm_Red" createVehicle [0,0,500]);
 		_smoke = ("SmokeShellRed" createVehicle [0,0,500]);
-	
-	} else {
-		_flare = ("F_40mm_Green" createVehicle [0,0,500]);
-		_smoke = ("SmokeShellGreen" createVehicle [0,0,500]);
-	};
-	
-	_flare attachTo [_x, [0,0,50]];
-	_smoke attachTo [_x, [0,0,50]];
-	
-	[_flare,_smoke] spawn {
-		sleep 20;
 		
-		{
-			deleteVehicle _x;
-		} forEach _this;
+		//Attach them both to the unit
+		_flare attachTo [_x, [0,0,50]];
+		_smoke attachTo [_x, [0,0,50]];
+		
+		//And add a cleanup timer
+		[_flare,_smoke] spawn {
+			sleep 20;
+			
+			{
+				deleteVehicle _x;
+			} forEach _this;
+		};
 	};
 } forEach BONYO_activeEnemyUnitList;
