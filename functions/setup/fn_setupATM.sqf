@@ -19,7 +19,7 @@
 _this allowDamage false;
 
 _this addAction ["Check Balance", {
-	hint format ["Personal Balance: $%1\nCommunanal Balance: %2", profileNamespace getVariable ["BONYOPLUS_points", 0], "N/A"];
+	hint format ["Personal Balance: $%1\nCommunanal Balance: %2", "points" call BONYO_fnc_loadStat, "N/A"];
 }, nil, 6, false, true];
 
 //Add our sell option
