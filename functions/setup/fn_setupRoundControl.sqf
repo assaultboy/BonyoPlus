@@ -37,8 +37,10 @@ _this addAction ["<t color='#ff0000'>What's New?</t>", {
 //Add our Stats Action
 _this addAction ["<t color='#00ff00'>Show me Stats</t>", {
 	"Stats" hintC [
-		parseText format ["Earliest Version played: V%1", (["versions", [0,0]] call BONYO_fnc_loadStat) select 0],
-		parseText format ["Number of Rounds Completed: %1    Failed: %2", ["lifetimeRoundCompletes", 0] call BONYO_fnc_loadStat, ["lifetimeRoundFails", 0] call BONYO_fnc_loadStat],
+		parseText format ["Earliest Version Played: V%1", (["versions", [0,0]] call BONYO_fnc_loadStat) select 0],
+		parseText format ["Number of Rounds Completed: %1", ["lifetimeRoundCompletes", 0] call BONYO_fnc_loadStat],
+		parseText format ["Number of Rounds Failed: %1", ["lifetimeRoundFails", 0] call BONYO_fnc_loadStat],
+		parseText format ["Highest Round Achieved: %1", ["highestRound", 0] call BONYO_fnc_loadStat],
 		parseText format ["Supply Drops opened: %1", ["lifetimeSupplyDrops", 0] call BONYO_fnc_loadStat]
 	];
 	
