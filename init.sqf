@@ -39,7 +39,7 @@ if (hasInterface) then {
 	//Check for current version
 	private ["_versions"];
 	
-	_versions = ("versions" call BONYO_fnc_loadStat);
+	_versions = (["versions", -1] call BONYO_fnc_loadStat);
 	
 	//IF no version is found set both earliest and current
 	if (typeName _versions == "SCALAR") then {
