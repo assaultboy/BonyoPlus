@@ -1,7 +1,7 @@
 //Let's initialize some variables
 
 //This will track our current version for saving
-BONYO_var_Version = 0.12;
+BONYO_var_Version = 0.13;
 
 //Fuck you VCOM
 Vcom_ActivateAI = false;
