@@ -3,7 +3,6 @@
 	
 	DESCRIPTION:
 		This function will compile all the stats into the correct index
-		This function must be executed on the server
 		
 	PARAMETERS:
 		Nothing
@@ -14,8 +13,6 @@
 	EXAMPLE
 		[] call BONYO_fnc_compileStats;
 */
-
-if (!isServer) exitWith {true};
 
 /*
 Stats Documentation
