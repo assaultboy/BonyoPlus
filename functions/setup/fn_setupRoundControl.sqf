@@ -58,9 +58,8 @@ _this addAction ["Start Wave", {
 	private ["_allIn"];
 	_allIn = true;
 	
-	//BIS_fnc_inTrigger may be bugged. I suggrest research if this fails
 	{
-		if (!(["area_base", getPosATL _x] call BIS_fnc_inTrigger)) then {
+		if (!(_x inArea "area_base")) then {
 			_allIn = false;
 		};
 	} forEach allPlayers;
