@@ -65,11 +65,13 @@ class CfgFunctions
 			class setupLocker {};
 			class setupATM {};
 			class setupFortPurchase {};
+			class setupRoleControl {};
 			
 			class compileMarkerLists {};
 			class compileRemarks {};
 			class compileFactions {};
 			class compileStats {};
+			class compileRoles {};
 		};
 		
 		class objects
@@ -96,6 +98,13 @@ class CfgFunctions
 			class addStat {};
 			
 			class handleRoundEndStats {};
+		};
+		
+		class roles
+		{
+			class setRole {};
+			class getRole {};
+			class getRoleFiller {};
 		};
 	};
 };

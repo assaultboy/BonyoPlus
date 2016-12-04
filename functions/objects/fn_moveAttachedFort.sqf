@@ -23,7 +23,7 @@ if (!hasInterface) exitWith {true};
 //Only run if we have a fortification
 if (isNull ((player getVariable ["BONYO_currentFortData", [objNull, [0,0,0]]]) select 0)) exitWith {true};
 
-private ["_data" ,"_object", "_offset", "_newOffset"];
+private ["_data" ,"_object", "_posOfffset", "_newPosOffset"];
 
 //Pull our data
 _data = (player getVariable ["BONYO_currentFortData", [objNull, [0,0,0]]]);

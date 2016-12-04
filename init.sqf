@@ -21,6 +21,8 @@ BONYO_currentMode
 
 [] call BONYO_fnc_compileStats;
 
+[] call BONYO_fnc_compileRoles;
+
 if (isServer) then {
 	//Set our variables because we aren't a peasent client
 	"idle" call BONYO_fnc_setMode;
