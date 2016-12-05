@@ -38,7 +38,6 @@ if (_index == -1) then {
 	
 //If the index exists then retrieve it
 } else {
-	(format ["_stats: %1     _index: %2,     select: %3",_stats, _index, _stats select _index]) call BONYO_fnc_print;
 	_return = (_stats select _index);
 };
 
