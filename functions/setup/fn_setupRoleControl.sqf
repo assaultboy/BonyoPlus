@@ -23,7 +23,7 @@ private ["_req_idle_noRole"];
 _req_idle_noRole = "(([] call BONYO_fnc_getMode) == 'idle') && ((player call BONYO_fnc_getRole) == '')";
 
 //Add our role description Button
-_this addAction ["<t color='#ff0000'>Role Descriptions</t>", {
+_this addAction ["<t color='#00ff00'>Role Descriptions</t>", {
 	"Roles" hintC [
 		parseText "Clink the link below to open a webpage that will describe each roles description and abilities",
 		parseText "<a underline='true' color='#9b9bff' href='https://github.com/assaultboy/BonyoPlus/wiki/Roles'>Roles&#160;Link</a>"
@@ -57,3 +57,10 @@ _this addAction ["Master Builder", {
 		hint format ["%1 is already the Master Builder!", name _roleFiller];
 	};
 }, nil, 6, false, true, "", _req_idle_noRole];
+
+
+
+//Role Release
+_this addAction ["Release Current Role", {
+	player remoteExec ["BONYO_fnc_releaseRole", 2];
+}, nil, 6, false, true, "", "(([] call BONYO_fnc_getMode) == 'idle') && ((player call BONYO_fnc_getRole) != '')"];
