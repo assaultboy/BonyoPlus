@@ -53,7 +53,7 @@ class CfgFunctions
 		
 		class money
 		{
-			class sellCargo	{};
+			class valueCargo {};
 			class giveMoney {};
 			class setMoney {};
 			class purchase {};

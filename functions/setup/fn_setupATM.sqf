@@ -33,7 +33,12 @@ _this addAction ["Sell Items", {
 	
 	//When we close it we are going to get its contents and return the amount it's worth
 	_box addeventHandler ["ContainerClosed", {
-		(_this select 0) call BONYO_fnc_sellCargo;
+		private ["_value"];
+		_value = ((_this select 0) call BONYO_fnc_getCargo) call BONYO_fnc_valueCargo;
+		
+		[_value, false] call BONYO_fnc_giveMoney;
+		
+		hint (format ["Sold gear for $%1", _value]);
 		
 		deleteVehicle (_this select 0);
 	}];
