@@ -23,8 +23,14 @@ if (!hasInterface) exitWith {true};
 //Local Objects Only
 if (!local _this) exitWith {true};
 
+//Make sure it doesn't already belong to someone else
+if (!isNull (_this getVariable ["BONYO_moveableOwner", objNull])) exitWith {true};
+
 //Disable Collision with the object
 [_this, false] call BONYO_fnc_collision;
+
+//Claim the object
+_this setVariable ["BONYO_moveableOwner", player, true];
 
 //Add the move action to the object
 _nil = _this addAction ["Move",{
@@ -74,9 +80,31 @@ _nil = _this addAction ["Move",{
 			detach _object;
 			[_object, true] call BONYO_fnc_collision;
 			
+			//Remove our ownership
+			_object setVariable ["BONYO_moveableOwner", nil, true];
+			
 			//Set our variables to null n shit
 			player setVariable ["BONYO_currentFortData", [objNull, [0,0,0]]];
-		}, nil, 6]
+		}, nil, 6],
+		
+		//Our Delete Action
+		player addAction ["<t color='#FF0000'>Delete Object</t>", {
+			private ["_object"];
+			
+			_object = ((player getVariable ["BONYO_currentFortData", [objNull, [0,0,0]]]) select 0);
+			
+			//Remove all the fortification actions from the player
+			{
+				player removeAction _x;
+			} forEach (player getVariable ["BONYO_currentFortActions", []]);
+			
+			//Set our variables to null n shit
+			player setVariable ["BONYO_currentFortData", [objNull, [0,0,0]]];
+			
+			//Delete the object
+			deleteVehicle _object;
+			
+		}, nil, 6, true, true, "", "(player call BONYO_fnc_getRole) == 'masterbuilder'"]
 	]];
 	
-}, nil, 6, true, true, "", "isNull ((player getVariable ['BONYO_currentFortData', [objNull, [0,0,0]]]) select 0)"];
+}, nil, 6, true, true, "", "(isNull ((player getVariable ['BONYO_currentFortData', [objNull, [0,0,0]]]) select 0)) && (([] call BONYO_fnc_getMode) == 'idle')"];
