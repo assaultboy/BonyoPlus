@@ -1,0 +1,36 @@
+[
+	"item1",
+	"item1",
+	"item2",
+	"item3"
+],
+[
+	"mag1",
+	"mag1",
+	"mag2",
+	"mag3"
+],
+[
+	"wep1",
+	"wep1",
+	"wep2",
+	"wep3"
+],
+[
+	[
+		"pack1",
+		[standard Cargo Format]
+	],
+	[
+		"pack1",
+		[standard Cargo Format]
+	],
+	[
+		"pack2",
+		[standard Cargo Format]
+	],
+	[
+		"pack3",
+		[standard Cargo Format]
+	]
+]
