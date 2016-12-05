@@ -15,7 +15,12 @@
 		_obj call BONYO_fnc_setupRoundControl
 */
 
+//Don't kill the object please
 _this allowDamage false;
+
+//Save space
+private ["_req_idle"];
+_req_idle = "([] call BONYO_fnc_getMode) == 'idle'";
 
 //Available during 'idle'---------------------------------------------------------
 
@@ -32,7 +37,7 @@ _this addAction ["<t color='#ff0000'>What's New?</t>", {
 			hintSilent "";
 		};
 	}];
-}, nil, 6, false, true, "", "([] call BONYO_fnc_getMode) == 'idle'"];
+}, nil, 6, false, true, "", _req_idle];
 
 //Add our Stats Action
 _this addAction ["<t color='#00ff00'>Show me Stats</t>", {
@@ -50,7 +55,7 @@ _this addAction ["<t color='#00ff00'>Show me Stats</t>", {
 			hintSilent "";
 		};
 	}];
-}, nil, 6, false, true, "", "([] call BONYO_fnc_getMode) == 'idle'"];
+}, nil, 6, false, true, "", _req_idle];
 
 //Add our Wave start option
 _this addAction ["Start Wave", {
@@ -70,7 +75,7 @@ _this addAction ["Start Wave", {
 	} else {
 		hint "All players must be in the play area to start a round!";
 	};
-}, nil, 6, false, true, "", "([] call BONYO_fnc_getMode) == 'idle'"];
+}, nil, 6, false, true, "", _req_idle];
 //--------------------------------------------------------------------------------
 
 

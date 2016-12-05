@@ -18,6 +18,10 @@
 //Don't kill the object pls
 _this allowDamage false;
 
+//Save some space
+private ["_req_idle_noRole"];
+_req_idle_noRole = "(([] call BONYO_fnc_getMode) == 'idle') && ((player call BONYO_fnc_getRole) == '')";
+
 //Add our role description Button
 _this addAction ["<t color='#ff0000'>Role Descriptions</t>", {
 	"Roles" hintC [
@@ -31,9 +35,13 @@ _this addAction ["<t color='#ff0000'>Role Descriptions</t>", {
 			hintSilent "";
 		};
 	}];
+	
+//We don't predefine this req because we only use it once
 }, nil, 6, false, true, "", "([] call BONYO_fnc_getMode) == 'idle'"];
 
-_this addAction ["<t color='#FF0000'>--Role Select---------------------------------</t>", "", nil, 6, false, true, "", "([] call BONYO_fnc_getMode) == 'idle'"];
+
+//Roles Selection
+_this addAction ["<t color='#FF0000'>--Role Select---------------------------------</t>", "", nil, 6, false, true, "", _req_idle_noRole];
 
 _this addAction ["Master Builder", {
 	private ["_roleFiller"];
@@ -48,4 +56,4 @@ _this addAction ["Master Builder", {
 	} else {
 		hint format ["%1 is already the Master Builder!", name _roleFiller];
 	};
-}, nil, 6, false, true, "", "(([] call BONYO_fnc_getMode) == 'idle') && ((player call BONYO_fnc_getRole) == '')"];
+}, nil, 6, false, true, "", _req_idle_noRole];
