@@ -22,7 +22,7 @@ _this allowDamage false;
 _this addAction ["<t color='#ff0000'>Role Descriptions</t>", {
 	"Roles" hintC [
 		parseText "Clink the link below to open a webpage that will describe each roles description and abilities",
-		parseText "<a underline='true' color='#9b9bff' href='https://github.com/assaultboy/BonyoPlus/releases'>Roles&#160;Link</a>"
+		parseText "<a underline='true' color='#9b9bff' href='https://github.com/assaultboy/BonyoPlus/wiki/Roles'>Roles&#160;Link</a>"
 	];
 	
 	hintC_arr_EH = findDisplay 72 displayAddEventHandler ["unload", {
@@ -36,5 +36,16 @@ _this addAction ["<t color='#ff0000'>Role Descriptions</t>", {
 _this addAction ["<t color='#FF0000'>--Role Select---------------------------------</t>", "", nil, 6, false, true, "", "([] call BONYO_fnc_getMode) == 'idle'"];
 
 _this addAction ["Master Builder", {
+	private ["_roleFiller"];
 	
-}, nil, 6, false, true, "", "([] call BONYO_fnc_getMode) == 'idle'"];
+	//Check to make sure the role is not already filled
+	_roleFiller = ("masterbuilder" call BONYO_fnc_getRoleFiller);
+	
+	if (isNull _roleFiller) then {
+		[player, "masterbuilder"] remoteExec ["BONYO_fnc_setRole", 2];
+		(format ["%1 has been made the Master Builder", name player]) remoteExec ["hint", 0];
+		
+	} else {
+		hint format ["%1 is already the Master Builder!", name _roleFiller];
+	};
+}, nil, 6, false, true, "", "(([] call BONYO_fnc_getMode) == 'idle') && ((player call BONYO_fnc_getRole) == '')"];
