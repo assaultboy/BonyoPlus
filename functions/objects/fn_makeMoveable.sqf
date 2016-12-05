@@ -83,6 +83,9 @@ _nil = _this addAction ["Move",{
 			//Remove our ownership
 			_object setVariable ["BONYO_moveableOwner", nil, true];
 			
+			//Flag our object for saving
+			_object setVariable ["BONYO_saveFortification", true, true];
+			
 			//Set our variables to null n shit
 			player setVariable ["BONYO_currentFortData", [objNull, [0,0,0]]];
 		}, nil, 6],

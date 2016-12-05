@@ -38,6 +38,9 @@ if (isServer) then {
 };
 
 if (hasInterface) then {
+	//Define our Role CommsMenu selections
+	BONYO_var_commsMenu = [];
+	
 	//Check for current version
 	private ["_versions"];
 	

@@ -12,6 +12,7 @@
 //Include our special functions
 #include "cfgFunctions.hpp"
 #include "cfgNotifications.hpp"
+#include "cfgCommunicationMenu.hpp"
 
 // Display Information
 #include "description_info.hpp"

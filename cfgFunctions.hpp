@@ -80,6 +80,7 @@ class CfgFunctions
 			class moveAttachedFort {};
 			class buyFort {};
 			class collision {};
+			class modFort {};
 		};
 		
 		class supplydrops
@@ -105,6 +106,9 @@ class CfgFunctions
 			class setRole {};
 			class getRole {};
 			class getRoleFiller {};
+			class releaseRole {};
+			class giveRolePerks {};
+			class removeRolePerks {};
 		};
 	};
 };
