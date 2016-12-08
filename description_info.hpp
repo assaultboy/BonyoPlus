@@ -6,7 +6,7 @@
 --------------------------------------------------------------------*/
 
 // Author
-author = "Romano";
+author = "Assaultboy";
 
 // Mission name
 briefingName = "Bonyo+ Chernarus"; // in mission select menu
@@ -17,4 +17,4 @@ onLoadName = "Bonyo+ Chernarus"; // on load screen
 
 // Mission description
 overviewText = "Slay wave after wave of enemies to help facilitate your looting addiction."; // in mission select menu
-onLoadMission = "Property of Unity Security Force"; // on load screen
+onLoadMission = "Sustain the looting addiction"; // on load screen
