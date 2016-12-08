@@ -19,6 +19,24 @@
 _this enableSimulation false;
 _this allowDamage false;
 
+//Add our locker help action
+_this addAction ["<t color='#00ff00'>What is this?</t>", {
+	"Locker" hintC [
+		parseText "Clink the link below to open a webpage that will explain the personal gear locker",
+		parseText "<a underline='true' color='#9b9bff' href='https://github.com/assaultboy/BonyoPlus/wiki/Locker'>Help&#160;Link</a>"
+	];
+	
+	hintC_arr_EH = findDisplay 72 displayAddEventHandler ["unload", {
+		0 = _this spawn {
+			_this select 0 displayRemoveEventHandler ["unload", hintC_arr_EH];
+			hintSilent "";
+		};
+	}];
+	
+//We don't predefine this req because we only use it once
+}, nil, 6, false, true, "", "([] call BONYO_fnc_getMode) == 'idle'"];
+
+//Add our open event handler
 _this addEventHandler ["ContainerOpened", {
 	private ["_box"];
 	
