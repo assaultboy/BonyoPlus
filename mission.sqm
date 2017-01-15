@@ -16,10 +16,10 @@ class EditorData
 	};
 	class Camera
 	{
-		pos[]={5901.3696,116.88074,2681.5723};
-		dir[]={0.21179725,-0.58206618,-0.78511524};
-		up[]={0.15161933,0.81309396,-0.56203854};
-		aside[]={-0.96551985,-1.6670674e-007,-0.26046419};
+		pos[]={5935.4316,75.104591,2600.1006};
+		dir[]={-0.87197179,-0.41177759,0.26494163};
+		up[]={-0.3940784,0.91124147,0.11973634};
+		aside[]={0.29073098,3.7718564e-008,0.95685041};
 	};
 };
 binarizationWanted=0;
@@ -44,7 +44,6 @@ addons[]=
 	"A3_Weapons_F_Ammoboxes",
 	"ace_dragging",
 	"A3_Structures_F_Households_WIP",
-	"101_editor",
 	"A3_Structures_F_Households_House_Big02",
 	"A3_Structures_F_EPC_Civ_Accessories",
 	"A3_Structures_F_EPB_Civ_Graffiti",

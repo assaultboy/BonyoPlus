@@ -27,7 +27,7 @@ private ["_crate", "_para", "_dz"];
 _dz = [_this select 0 select 0, _this select 0 select 1, 200];
 
 //Create our crate and parachute
-_crate = "plp_ctm_HighSecBigBlack" createVehicle [0,0,200];
+_crate = "Land_PaperBox_closed_F" createVehicle [0,0,200];
 _para = "B_Parachute_02_F" createVehicle [0,0,250];
 
 //Move everything to where it needs to be

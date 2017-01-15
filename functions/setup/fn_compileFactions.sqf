@@ -24,9 +24,9 @@ BONYO_enemyVicFactionList = [];
 //Infantry Faction List
 {
 	BONYO_enemyInfFactionList pushBack (compile (preprocessFileLineNumbers (format ["functions\ai\infFactions\%1.sqf", _x])));
-} forEach ["NATO", "CSAT", "RUSSIAN", "ISAS", "HPM", "FIA", "USARMY", "NATIONALISTS", "CHDKZ", "CHERNOMIL"];
+} forEach ["NATO", "CSAT","FIA"];
 
 //Vehicle Faction List
 {
 	BONYO_enemyVicFactionList pushBack (compile (preprocessFileLineNumbers (format ["functions\ai\vicFactions\%1.sqf", _x])));
-} forEach ["NATO", "CSAT", "RUSSIAN", "ISAS", "FIA", "USARMY", "NATIONALISTS", "CHDKZ", "CHERNOMIL"];
+} forEach ["NATO", "CSAT", "FIA"];

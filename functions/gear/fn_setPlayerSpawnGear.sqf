@@ -41,7 +41,7 @@ removeBackpack _unit;
 removeHeadgear _unit;
 
 //Add the uniform and equipment
-_unit forceAddUniform "U_B_CombatUniform_NKPBlack";
+_unit forceAddUniform "U_B_Protagonist_VR";
 for "_i" from 1 to 5 do {_unit addItemToUniform "ACE_fieldDressing";};
 _unit addItemToUniform "ACE_epinephrine";
 for "_i" from 1 to 3 do {_unit addItemToUniform "ACE_morphine";};
