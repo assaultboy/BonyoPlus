@@ -67,7 +67,7 @@ _nil = _this addAction ["Move",{
 		player addAction ["<t color='#FF0000'>--------------------------------</t>", "", nil, 6],
 		
 		player addAction ["Place Object", {
-			private ["_object","_modAction"];
+			private ["_object"];
 			
 			_object = ((player getVariable ["BONYO_currentFortData", [objNull, [0,0,0]]]) select 0);
 			
