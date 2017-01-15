@@ -1,12 +1,12 @@
 /*--------------------------------------------------------------------
-  Author: Unity Security Force
+  Author: J.Romano
 
   description_info.hpp
   Part of description.ext - Mission description and information
 --------------------------------------------------------------------*/
 
 // Author
-author = "Assaultboy";
+author = "J. Romano";
 
 // Mission name
 briefingName = "Bonyo+ Chernarus"; // in mission select menu

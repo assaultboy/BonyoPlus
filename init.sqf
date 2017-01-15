@@ -1,7 +1,7 @@
 //Let's initialize some variables
 
 //This will track our current version for saving
-BONYO_var_Version = 0.14;
+BONYO_var_Version = 0.15;
 
 //Fuck you VCOM
 Vcom_ActivateAI = false;
@@ -51,6 +51,13 @@ if (hasInterface) then {
 		_versions = [BONYO_var_Version, BONYO_var_Version];
 	};
 	
+	//Correct for version updates
+	if ((_versions select 1) < 0.15) then {
+		false call BONYO_fnc_resetLocker;
+		hint "Locker reset due to major update, sorry";
+	};
+	
+	//Save our latest version for the player
 	["versions", [_versions select 0, BONYO_var_Version]] call BONYO_fnc_saveStat;
 	
 	//Check for the old points

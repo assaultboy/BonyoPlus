@@ -65,7 +65,7 @@ _rewards = [{
 },
 {
 	[200, true] call BONYO_fnc_giveMoney;
-}
+},
 {
 	private ["_box"];
 	
